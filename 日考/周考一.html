@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			margin: 0 auto;
+			color: #CCCCCC;
+			background-color: green;
+			width: 80px;
+			height: 50px;
+			line-height: 50px;
+		}
+		.tianjia{
+			margin: 0 auto;
+			width: 300px;
+			height: 30px;
+		}
+		.tianjia button{
+			float: right;
+			background-color: #CCCCCC;
+			color: #fff;
+			width: 80px;
+			line-height: 20px;
+		}
+	</style>
+	<body>
+		<div class="box">
+			添加课程
+		</div>
+		<ol>
+			<!--<li class="tianjia"></li>-->
+		</ol>
+	</body>
+	<script>
+		$(function(){
+		var ary = ['php课程','web前端','java课程','.net课程','c#课程','c++课程'];
+		$('.box').click(function(){
+			var $li = $('<li class="tianjia">1、'+ary[Math.floor(Math.random()*ary.length)]+'----'+Math.floor(Math.random()*100)+'<button>删除</button>');
+			$('ol').append($li);
+			$('li').css({
+				background:function(){
+					return '#'+Math.floor(Math.random()*16*16*16*16*16*16-1).toString(16);
+				}
+			})
+			$('button').click(function(){
+				$(this).parent('li').remove();
+			})
+		})
+
+	});
+	</script>
+</html>

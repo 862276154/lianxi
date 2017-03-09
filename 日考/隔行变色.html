@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+		<style>
+			table{
+				border: 0;
+				border-collapse: collapse;/*合并边框*/
+			}
+			td{
+				font: normal 12px/17px arial;
+				padding: 2px;
+				width: 100px;
+			}
+			th{
+				/*font: normal 12px/17px arial;*/
+				text-align: left;
+				padding: 4px;
+				border-bottom: 1px solid #333;
+			}
+			.even{
+				background: #fff38f;
+			}
+			.odd{
+				background: #66cd00;
+			}
+			.selected{
+				background: #ff6500;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>选择</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>户口所在地</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" checked="checked" /></td>
+					<td>刘能</td><td>男</td><td>莲花乡</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>张三</td><td>男</td><td>山西大同</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>李四</td><td>男</td><td>北京海淀</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>蒙多</td><td>女</td><td>弗雷尔卓德</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>亚索</td><td>男</td><td>比尔吉无特</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>丽桑卓</td><td>女</td><td>无畏先锋</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>刘德华</td><td>男</td><td>中国香港</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="choice" value="" /></td>
+					<td>奥黛丽赫本</td><td>女</td><td>美国</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			//给偶数行添加背景色
+			$('tbody>tr:even').addClass('even');
+			//给奇数行添加背景色
+			$('tbody>tr:odd').addClass('odd');
+			$('tbody>tr').click(function(){
+				//清楚所有input的选中状态
+				$('input[type=checkbox]').prop('checked',false);
+				//判断是否选中
+				//hasClass：检查当前的元素是否含有某个特定的类，如果有，则返回true。
+				var hasSelected = $(this).hasClass('selected');
+//				console.log(hasSelected)  返回的false
+				//如果已经选中，则移除selected类，否则就加上
+				$(this)[hasSelected?'removeClass':'addClass']('selected').find(':checkbox').prop('checked',!hasSelected);
+				$(this).siblings().removeClass('selected');
+			})
+		})
+	</script>
+</html>

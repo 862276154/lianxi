@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+    div.centent{
+        float: left;text-align: center;margin: 10px;
+    }
+</style>
+<body>
+<div class="centent">
+    <select name="" id="select1" multiple="multiple" style="width: 100px;height: 160px">
+        <option value="1">选项1</option>
+        <option value="2">选项2</option>
+        <option value="3">选项3</option>
+        <option value="4">选项4</option>
+        <option value="5">选项5</option>
+        <option value="6">选项6</option>
+    <select>
+    <div id="add">&gt;&gt;选中添加到右边</div>
+    <div id="addAll">&gt;&gt;全部添加到右边</div>
+</div>
+<div class="centent">
+    <select name="" id="select2" multiple="multiple" style="width: 100px;height: 160px">
+        <option value="1">选项1</option>
+        <option value="2">选项2</option>
+        <option value="3">选项3</option>
+        <option value="4">选项4</option>
+        <option value="5">选项5</option>
+        <option value="6">选项6</option>
+    <select>
+    <div id="remove">&lt;&lt;选中添加到右边</div>
+    <div id="removeAll">&lt;&lt;全部添加到右边</div>
+</div>
+<script>
+    //移到右边
+    $('#add').click(function () {
+        $('#select1 option:selected').appendTo('#select2');
+    });
+    $('#addAll').click(function () {
+        $('#select1 option').appendTo('#select2');
+    });
+    
+    //移到zuo边
+    $('#remove').click(function () {
+        $('#select2 option:selected').appendTo('#select1');
+    });
+    $('#removeAll').click(function () {
+        $('#select2 option').appendTo('#select1');
+    });
+</script>
+
+</body>
+</html>

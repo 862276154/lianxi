@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.wrapper{
+				width: 300px;
+				height: auto;
+				border: 1px solid #ccc;
+				margin: 30px auto;
+				padding: 10px;
+				background: darkgray;
+			}
+			.sum{
+				border: 1px solid #CCCCCC;
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				padding-left: 5px;
+				background: #ccc;
+			}
+			input{
+				margin-top: 10px;
+				width: 65px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				margin-left: 6.5px;
+				box-sizing: border-box;
+				border: 1px solid #D9FFFF;
+				/*border-radius: 10px;
+				outline: none;
+				border: none;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="sum" class="sum"></div>
+			<div id="datainfo">
+			</div>
+		</div>
+		<!--改变input输入内容的颜色-->
+		<!--input::-webkit-input-placeholder{
+                color: #fff;
+   }-->
+
+		<script>
+			var arr=['1','2','3','4','5','6','7','8','9','0','+','-','*','/','%','C','='];
+			var sum=document.getElementById('sum'),datainfo=document.getElementById('datainfo');
+			var html='';
+			for(var i=0;i<arr.length;i++){
+				html+='<input type="button" value="'+arr[i]+'" id="'+i+'">';
+			};
+			datainfo.innerHTML=html;
+			var inputs=document.getElementsByTagName('input'),suminfo='';
+			for(var i=0;i<inputs.length;i++){	
+				inputs[i].onclick=function(){
+					//console.log(this.value);
+					if(this.value=='='){
+						suminfo=eval(sum.innerText);
+					}else if(this.value=='C'){
+						suminfo=0;
+					}else{
+						if(suminfo==0){
+							suminfo='';
+							suminfo+=this.value;
+						}else suminfo+=this.value;
+					} 
+					sum.innerText=suminfo;					
+				}
+			};
+		</script>
+	</body>
+</html>

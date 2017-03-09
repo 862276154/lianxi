@@ -1,0 +1,93 @@
+@import url('reset.css');
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  font-size: 1.5rem;
+}
+.wrapper header {
+  width: 100%;
+  height: 4rem;
+  background: #ff614c;
+}
+.wrapper header p {
+  text-align: center;
+  line-height: 4rem;
+  color: white;
+}
+.wrapper section {
+  padding: 0 1rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper section .banner {
+  -webkit-box-flex: 1;
+  text-align: center;
+  margin: 3.6rem 0;
+}
+.wrapper section input {
+  display: block;
+  -webkit-box-flex: 1;
+  width: 100%;
+  height: 3.5rem;
+  background: none;
+  outline: none;
+  border: none;
+  border: 1px solid #eaeaea;
+  padding-left: 4rem;
+  margin-bottom: 2.5rem;
+  box-sizing: border-box;
+}
+.wrapper section .one {
+  position: absolute;
+  top: 16.3rem;
+  left: 2rem;
+}
+.wrapper section .two {
+  position: absolute;
+  top: 22rem;
+  left: 2rem;
+}
+.wrapper section button {
+  width: 100%;
+  height: 3.5rem;
+  background: #f85453;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  color: white;
+}
+.wrapper section .zhuce {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  margin-top: 1.6rem;
+}
+.wrapper section .zhuce > div {
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: #bcbcbc;
+  font-size: 1.2rem;
+}
+.wrapper section .zhuce div:nth-child(1) {
+  border-right: 1px solid #bcbcbc;
+}

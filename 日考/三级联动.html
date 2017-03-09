@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div>
+			<select></select>
+		</div>
+	</body>
+</html>
+<script>
+	$(function(){
+		var area;
+		$.ajax({
+			type:"get",
+			url:"city.txt",
+			data:{},
+			dataType:"json",
+			async:false,
+			success:function(data){
+				area=data;
+				$.each(data,function(i,val){
+					$("select:first").append("<option value="+i+">"+val.name+"</option>");
+				})
+			}
+		})
+		$(document).on("change","select",function(){
+			var _value=$(this).val();
+			var arr=_value.split(",");
+			var obj=$(this);
+			$(this).nextAll("select").remove();
+			$.each(area,function(_i,_val){
+					if(_i==arr[0]){
+						if(arr.length==1){
+							var str="";
+							$.each(_val.sub,function(__i,__val){
+								str+="<option value="+_i+","+__i+">"+__val.name+"</option>";
+							})
+							obj.after("<select>"+str+"</select>");
+						}else if(arr.length==2){
+							$.each(_val.sub,function(__i,__val){
+								if(__i==arr[1]&&__val.sub){
+									var str="";
+									$.each(__val.sub,function(___i,___val){
+										str+="<option value="+_i+","+__i+","+___i+">"+___val.name+"</option>";
+									})
+									obj.after("<select>"+str+"</select>");
+								}
+							})
+						}
+					}
+				
+				
+			})
+		})
+	})
+</script>

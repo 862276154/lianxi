@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="jquery-3.1.1.js">
+</script>
+<style>
+    body,html{
+        height: 1000%;
+        background: green;
+        background: -webkit-linear-gradient(top,lightsalmon,lightgoldenrodyellow,lightblue,lightslategray);
+    }
+    *{
+        margin: 0;padding: 0;
+    }
+    div{
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50%;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 10px darkGreen;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        display: none;
+    }
+</style>
+<body>
+<!--网页可见区域宽： document.body.clientWidth;-->
+<!--网页可见区域高： document.body.clientHeight;-->
+<!--网页可见区域宽： document.body.offsetWidth (包括边线的宽);-->
+<!--网页可见区域高： document.body.offsetHeight (包括边线的宽);-->
+<!--网页正文全文宽： document.body.scrollWidth;-->
+<!--网页正文全文高： document.body.scrollHeight;-->
+<!--网页被卷去的高： document.body.scrollTop;-->
+<!--网页被卷去的左： document.body.scrollLeft;-->
+<!--网页正文部分上： window.screenTop;-->
+<!--网页正文部分左： window.screenLeft;-->
+<!--屏幕分辨率的高： window.screen.height;-->
+<!--屏幕分辨率的宽： window.screen.width;-->
+<!--屏幕可用工作区高度： window.screen.availHeight;-->
+<!--屏幕可用工作区宽度：window.screen.availWidth;-->
+
+<div>回到顶部</div>
+        <script>
+        $(function(){
+            var $win = $(window);
+            var timer = null;
+            var isOK = false;
+            $(window).on('scroll',function(){
+                if(isOK){
+                    clearInterval(timer);
+                }
+                isOK=true;
+                    if($win.scrollTop()>$win.height()){
+                        console.log('ok');
+                        $('div').stop().show();
+                    }
+                    else{
+                        $('div').stop().hide();
+                    }
+            });
+            $('div').click(function(){
+                $('div').stop().hide();
+                var $target = $win.scrollTop();
+                var duration = 1000;
+                var interval = 20;
+                var step = $target/duration*interval;
+                timer = setInterval(function(){
+                    isOK = false;
+                    $target-=step;
+                    if($target<=0){
+                        clearInterval(timer);
+                        return;
+                    }
+                    $win.scrollTop($target);
+                },interval)
+            })
+        })
+        </script>
+</body>
+< ml>

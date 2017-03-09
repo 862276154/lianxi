@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>雪碧图</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="bg.js"></script>
+</head>
+<style>
+	*{padding: 0;margin: 0;list-style: none;}
+	.header{
+		width: 500px;
+		height: 100px;
+		background: yellow;
+		margin: 0 auto;
+	}
+	.box{
+		width: 130px;
+		height: 24px;
+		/*display: inline;*/
+		float: right;
+		background: #fff;
+		margin: 10px 20px 0 0;
+	}
+	.box ul{
+		margin-top: 6px;
+	}
+	.box ul li{
+		float: left;
+		margin:0 3px;
+		
+	}
+	.box ul li a{
+		width: 14px;
+		height: 14px;
+		background-image: url(./img/theme.gif);
+		background-repeat: no-repeat;
+		display: block;
+	}
+	.bg1{background-position: 0 0;background-color: #4f71b9;}
+	.bg2{background-position: -20px 0;background-color: #bad832;}
+	.bg3{background-position: -40px 0;background-color: #faab1a;}
+	.bg4{background-position: -60px 0;background-color: #08bece;}
+	.bg5{background-position: -80px 0;background-color: #e31559;}
+	.bg6{background-position: -100px 0;background-color: #be46d8;}
+	.bg1:hover,.active1{background-position: 0 -15px;}
+	.bg2:hover,.active2{background-position: -20px -15px;}
+	.bg3:hover,.active3{background-position: -40px -15px;}
+	.bg4:hover,.active4{background-position: -60px -15px;}
+	.bg5:hover,.active5{background-position: -80px -15px;}
+	.bg6:hover,.active6{background-position: -100px -15px;}
+	.box2 ul{
+		width: 80px;
+		height:16px;
+		margin-top:4px;
+		background-image: url(./img/star-matrix.gif);
+		background-repeat: no-repeat;
+	}
+	.box2 ul li{
+		float: left;
+		width: 16px;
+		height:16px;
+	}
+</style>
+<body>
+	<div class="header">
+		<div class="box" id="box">
+			<ul>	
+				<li class="bg"><a href="javascript:;" class="bg1"></a></li>
+				<li class="bg"><a href="javascript:;" class="bg2"></a></li>
+				<li class="bg"><a href="javascript:;" class="bg3"></a></li>
+				<li class="bg"><a href="javascript:;" class="bg4"></a></li>
+				<li class="bg"><a href="javascript:;" class="bg5"></a></li>
+				<li class="bg"><a href="javascript:;" class="bg6"></a></li>
+			</ul>
+		</div>
+		<!--<div class="box2">
+			<ul>	
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>-->
+	</div>	
+</body>
+<script type="text/javascript">
+$(function(){
+	$('.box2 li').click(function(){
+		if($(this).index()<2){
+			$(this).parent().css('background-position','0-'+16*($(this).index()+1)+'px');
+		}else{
+			$(this).parent().css('background-position','0-'+(16*($(this).index()+1)+80)+'px');
+		}
+		alert('您给此商品的评分是'+($(this).index()+1)+'分');
+	})
+	$('.bg').bg();
+})
+</script>
+</html>

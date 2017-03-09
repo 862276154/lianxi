@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片轮播</title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			margin-left: 30%;
+			width: 200px;
+			height: 200px;
+			border: 3px solid #FF0000;
+			overflow: hidden;
+			position: relative;
+		}
+		ul{
+			position: absolute;
+			width: 800px;
+			height: 200px;
+			left: 0;
+			top: 0;
+		}
+		ul li{
+			width: 200px;
+			height: 200px;
+			float: left;			
+		}
+		.box:hover button{
+			display: block;
+		}
+		.zuo{
+			position: absolute;
+			top: 100px;
+			left: 0;
+			opacity: 0.5;
+			display: none;
+		}
+		.you{
+			position: absolute;
+			top: 100px;
+			right: 0;
+			opacity: 0.5;
+			display: none;
+		}
+		ol{
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+		}
+		ol li{
+			float: left;
+			margin-left: 3px;
+			text-align: center;
+			width: 14px;
+			height: 14px;
+			line-height: 14px;
+			cursor: pointer;
+			background-color: black;			
+			color: #fff;
+			border: 1px solid blue;
+			opacity: 0.5;
+		}
+		ol li.one{
+			background-color: orange;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="1.jpg"/></li>
+				<li><img src="2.jpg"/></li>
+				<li><img src="3.jpg"/></li>
+				<li><img src="4.jpg"/></li>
+				<!--<li><img src="1.jpg"/></li>-->
+			</ul>
+			<button class="zuo"><<</button>
+			<button class="you">>></button>
+			<ol>
+				<li class="one">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ol>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			var olLi = $('.box>ol>li');
+			var ulUl = $('.box>ul');
+			var ulLi = $('.box>ul>li');
+			//设置一个定时器
+			var _now = 0;//这个是控制数字样式的计数器
+			var _now2 = 0;//这个是控制图片运动距离的计数器
+			var timeId = null;
+			//获取li的宽度
+			var ulLiWidth = $('.box>ul>li').eq(0).width();
+//			console.log(ulLiWidth)
+			olLi.click(function(){
+				var index = $(this).index();
+				_now = index;
+//				console.log(index)
+				$(this).addClass('one').siblings().removeClass();
+				ulUl.animate({'left':-ulLiWidth*index},500);
+			});
+			
+			//图片运动的函数 ；无返回值
+			function slider(){			
+				if(_now==ulLi.length-1){
+					ulLi.eq(0).css({
+						'position':'relative',
+						'left':ulUl.width()
+					});
+					_now=0;
+				}else{
+					_now++;
+				}
+				_now2++;				
+				olLi.eq(_now).addClass('one').siblings().removeClass();
+				ulUl.animate({'left':-ulLiWidth*_now2},500,function(){
+					if(_now==0){
+					ulLi.eq(0).css('position','static');
+					ulUl.css('left',0);
+					_now2=0;
+				}
+				});								
+			}
+			//setInterval每隔一秒执行一次fn，不停止
+			timeId = setInterval(slider,1000);
+			$('.box').mouseover(function(){
+				clearInterval(timeId);
+			});
+			
+			$('.box').mouseout(function(){
+				timeId = setInterval(slider,1000);
+			});
+			$('.you').click(function(){
+//				var index = $(this).index();
+//				_now = index;
+////				console.log(index)
+//				$(this).addClass('one').siblings().removeClass();
+//				ulUl.animate({'left':-ulLiWidth*index},500);
+			});
+		});
+	</script>
+</html>

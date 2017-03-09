@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/城市.css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="all_w">
+			<div class="w_one">							
+		<header>
+			<div><img src="img/aa_03.jpg"/><span class="fanhui">返回</span><span>关闭</span></div>
+			<h1>选择预约城市</h1>
+			<div class="div_er"><img src="img/aa_05.jpg"/></div>
+		</header>
+		<section>
+			<div>
+			<div class="search">
+				<input type="text" placeholder="中文/拼音/首字母"/>
+			</div>
+			<div class="remen">
+				<div>热门城市</div>
+				<div></div>
+				<div><img src="img/chengshi_03.jpg"/></div>
+			</div>
+			<div class="beijing">
+				<p>北京</p>
+				<p>大连</p>
+				<p>上海</p>
+			</div>
+			<div class="beijing">
+				<p>广州</p>
+				<p style="visibility: hidden">郑州</p>
+				<p style="visibility: hidden">成都</p>
+			</div>
+			<h2>B</h2>
+			<h3>北京</h3>
+			<h2>C</h2>
+			<h3>长春</h3>
+			<h2>D</h2>
+			<h3>大连</h3>
+			<h3>东莞</h3>
+			<h3>德州</h3>
+			<h3>大理</h3>
+			<h3>大同</h3>
+			<h2>F</h2>
+			<h3>佛山</h3>
+			</div>
+		</section>
+		</div>
+		<div class="w_two">2</div>
+		<div class="w_three">3</div>
+		<div class="w_four">4</div>
+		</div>
+		<footer>
+			<dl class="f_first">
+				<dt><img src="img/chengshi_07.jpg"/></dt>
+				<dd>首页</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/chengshi_09.jpg"/></dt>
+				<dd>添加</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/chengshi_11.jpg"/></dt>
+				<dd>客服</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/chengshi_13.jpg"/></dt>
+				<dd>我的</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+	var myscroll=new IScroll(".w_one section",{
+					scrollbars:true,
+					disableMouse:true,
+					disablePointer:true,
+					scrollbars:'custom'
+			});
+			var btn = $('footer>dl');
+			btn.on('click',function(){
+			var _index = $(this).index();
+				$(this).addClass('f_first').siblings().removeClass('f_first');
+				$('.all_w>div').hide().eq(_index).show();
+			})
+</script>
+</html>

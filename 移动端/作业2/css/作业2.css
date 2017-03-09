@@ -1,0 +1,97 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrap header {
+  width: 100%;
+  height: 4.4rem;
+  background: #ff614c;
+  position: relative;
+}
+.wrap header div:nth-child(1) {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: none;
+  position: absolute;
+  top: 1.9rem;
+  left: 1rem;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  transform: rotateZ(45deg);
+}
+.wrap header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  line-height: 4.4rem;
+  color: white;
+  font-size: 1.4rem;
+}
+.wrap section {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  padding: 2.8rem 1rem 0;
+}
+.wrap section > div {
+  width: 100%;
+  height: 3.4rem;
+  background: none;
+  line-height: 3.4rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+.wrap section > div img {
+  background: red;
+  vertical-align: middle;
+  margin: 0 1.5rem;
+}
+.wrap section > div > input {
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+}
+.wrap section .first {
+  background: #ff614c;
+  color: white;
+  text-align: center;
+  margin-top: 1.3rem;
+  font-size: 1.5rem;
+}
+.wrap section p {
+  padding-left: 0.6rem;
+  color: #CCCCCC;
+}
+.wrap section p span {
+  color: #ff614c;
+}
+@media screen and (min-width: 375px) and (max-width: 375px) {
+  .wrap header {
+    background: purple;
+  }
+}

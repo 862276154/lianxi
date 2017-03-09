@@ -1,0 +1,141 @@
+@import url("reset.css");
+html {
+  font-size: 62.5%; }
+
+html body, .wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+
+.wrapper {
+  overflow: hidden; }
+  .wrapper .all_w {
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal; }
+    .wrapper .all_w .w_one {
+      width: 100%;
+      height: auto;
+      background: none;
+      display: -webkit-box;
+      -webkit-box-orient: vertical; }
+      .wrapper .all_w .w_one header {
+        width: 100%;
+        height: 4.1rem;
+        background: #ff4210;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        padding: 0 1.3rem;
+        box-sizing: border-box;
+        line-height: 4.1rem; }
+        .wrapper .all_w .w_one header img {
+          vertical-align: middle; }
+        .wrapper .all_w .w_one header > input {
+          display: block;
+          -webkit-box-flex: 1;
+          width: 100%;
+          height: 2.5rem;
+          background: white;
+          margin: 0 2rem;
+          margin-top: 0.8rem;
+          outline: none;
+          border: none;
+          padding-left: 2.2rem;
+          position: relative;
+          border-radius: 3px; }
+        .wrapper .all_w .w_one header input::-webkit-input-placeholder {
+          color: #ff621a; }
+        .wrapper .all_w .w_one header .h_one {
+          position: absolute;
+          top: 1.6rem;
+          left: 6.3rem; }
+        .wrapper .all_w .w_one header .h_two {
+          position: absolute;
+          top: 1.6rem;
+          right: 6.3rem; }
+      .wrapper .all_w .w_one section {
+        -webkit-box-flex: 1;
+        overflow-y: auto; }
+        .wrapper .all_w .w_one section::-webkit-scrollbar {
+          width: 0; }
+        .wrapper .all_w .w_one section .banner {
+          width: 100%;
+          height: 10rem;
+          background: none; }
+          .wrapper .all_w .w_one section .banner img {
+            width: 100%;
+            height: 10rem;
+            background: none; }
+        .wrapper .all_w .w_one section .banner2 {
+          width: 100%;
+          height: 9.7rem;
+          background: none; }
+          .wrapper .all_w .w_one section .banner2 img {
+            width: 100%;
+            height: 9.7rem;
+            background: none; }
+        .wrapper .all_w .w_one section .main {
+          display: -webkit-box;
+          -webkit-box-orient: horizontal;
+          color: #bcbcbc; }
+          .wrapper .all_w .w_one section .main dl {
+            -webkit-box-flex: 1;
+            text-align: center;
+            margin-top: 1rem;
+            width: 0; }
+        .wrapper .all_w .w_one section .tao {
+          display: -webkit-box;
+          -webkit-box-orient: horizontal;
+          margin-top: 1.8rem;
+          color: #696969;
+          overflow-x: auto; }
+          .wrapper .all_w .w_one section .tao::-webkit-scrollbar {
+            width: 0; }
+          .wrapper .all_w .w_one section .tao img {
+            margin: 0 1.6rem;
+            height: 3.5rem; }
+          .wrapper .all_w .w_one section .tao .t_one {
+            margin-top: 4px; }
+          .wrapper .all_w .w_one section .tao span {
+            border: 1px solid #f47378;
+            margin-right: 3px;
+            padding: 0 1px;
+            border-radius: 5px; }
+          .wrapper .all_w .w_one section .tao ul {
+            border-left: 1px solid #f6f6f6;
+            padding-left: 6px; }
+        .wrapper .all_w .w_one section .s_bottom {
+          width: 100%;
+          height: auto;
+          background: #fc4221;
+          padding: 0.5rem 0.5rem 0 0.5rem;
+          box-sizing: border-box; }
+          .wrapper .all_w .w_one section .s_bottom .s_b_one {
+            width: 100%;
+            height: auto;
+            background: white;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal; }
+            .wrapper .all_w .w_one section .s_bottom .s_b_one > div {
+              -webkit-box-flex: 1;
+              text-align: center; }
+            .wrapper .all_w .w_one section .s_bottom .s_b_one .ww {
+              border-right: 1px solid #f6f6f6; }
+  .wrapper footer {
+    width: 100%;
+    height: 3.6rem;
+    background: white;
+    border-top: 1px solid #e8e8e8;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    padding-top: 0.8rem;
+    color: #dddee0; }
+    .wrapper footer dl {
+      -webkit-box-flex: 1;
+      text-align: center; }
+    .wrapper footer .hong {
+      color: #ff9274; }
+
+/*# sourceMappingURL=%D6%DC%BF%BC%B6%FE.css.map */

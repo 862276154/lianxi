@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;				
+			}
+			#canvas{
+				display: block;
+				margin:40px auto;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">在不支持的浏览器里，显示我现在写的内容</canvas>
+	</body>
+	<!--<script>
+		var canvas = document.getElementById('canvas');
+		//创建canvas的绘图环境
+		var ctx = canvas.getContext('2d');
+		//ctx.arc(100,100,50,0,Math.PI*1.5,false);
+		ctx.fillStyle = 'royalblue';
+		ctx.beginPath();//开始绘制路径
+		ctx.translate(100,100);//位移到圆心，方便绘制
+		ctx.moveTo(0,0);//移动到圆心
+		ctx.arc(0,0,80,0,Math.PI,false);//绘制圆弧
+		ctx.closePath();//闭合路径
+		ctx.fill();
+	</script>-->
+	<script>
+		var canvas = document.getElementById('canvas');
+		//创建canvas的绘图环境
+		var can = canvas.getContext('2d');
+//		can.beginPath();//开始绘制路径
+//		can.strokeStyle='red';
+//		can.lineWidth=5;
+//		can.moveTo(250,30);
+//		can.lineTo(40,200);
+//		can.lineTo(70,250);
+//		can.stroke();
+		
+//		can.strokeStyle='blueviolet';
+//		can.lineWidth=2;
+//		for(var i=0;i<8;i++){
+//			can.beginPath();
+//			can.moveTo(i*80,100);
+//			can.lineTo(i*80,400);
+//			can.stroke();
+//		}
+//		var Xpianyi = [0,0];//x轴的起点和y轴的起点
+//		var Ypianyi = [0,300];
+//		
+//		can.strokeStyle='mediumvioletred';
+//		can.lineWidth=3;
+//		for(var i=0;i<5;i++){
+//			can.beginPath();
+//			can.moveTo(Xpianyi[0],Xpianyi[1]);
+//			can.lineTo(Ypianyi[0],Ypianyi[1]);
+//			Xpianyi[0]+=100;
+//			Ypianyi[0]+=100;
+//			can.stroke();
+//		}
+//		
+//		var hxPianyi=[0,0];
+//		var hyPianyi=[400,0];
+//		
+//		can.lineWidth=5;
+//		can.strokeStyle='yellowgreen';
+//		
+//		for(var j=0;j<3;j++){
+//			can.beginPath();
+//			can.moveTo(hxPianyi[0],hxPianyi[1]);
+//			can.lineTo(hyPianyi[0],hyPianyi[1]);
+//			hxPianyi[1]+=150;
+//			hyPianyi[1]+=150;
+//			can.stroke();
+//		}
+		//arc是创建圆形
+		//xxx.arc(x,y,radius,startAngle,endAngle,antidockwise)
+		//x为圆形起点的横坐标,y为圆形起点的纵坐标,radius为圆形半径,startAngle为开始角度,endAngle为结束角度,antidockwise是否按照顺时针进行绘制
+		can.beginPath();
+		can.lineWidth=4;
+		can.strokeStyle='lawngreen';//描边圆
+		can.fillStyle='red';//填充圆
+		can.arc(150,100,50,0,Math.PI*2,true);
+		can.fill();
+		can.stroke();
+		
+		
+		//rect是创建矩形
+		can.rect(200,200,150,50);//四个参数分别是x，y，width,height 
+		//can.stroke();
+		can.fill();
+		can.strokeRect(20,20,100,10);
+	</script>
+</html>

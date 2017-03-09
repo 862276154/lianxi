@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQurey版的网页菜单</title>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type=text/javascript>
+$(function(){
+	$('#webmenu li').hover(function(){
+		$(this).children('ul').stop(true,true).slideDown('slow');
+	},function(){
+		$(this).children('ul').stop(true,true).slideUp('slow');
+	});
+	
+	$('#webmenu li').hover(function(){
+		$(this).children('div').stop(true,true).slideDown('slow');
+	},function(){
+		$(this).children('div').stop(true,true).slideUp('slow');
+	});
+});
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:"宋体";
+	font-size:12px;
+	text-align:left;
+}
+img{ border:0px;}
+a {
+	color:#333;
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+#webmenu {	height:24px; text-align:center;}
+#webmenu li ul {display:none; border:1px solid #ddd;}
+#webmenu li ul li {	float:none;}
+*html #webmenu li ul li {display:inline;}
+#webmenu li ul a {float:none; height:24px; line-height:24px; padding:0 10px; text-transform:capitalize;}
+#webmenu .height-auto {	line-height:15px; padding:5px 10px;}
+.second-menu, .third-menu, .fourth-menu {position:absolute;}
+.first-menu li {float:left;	position:relative;}
+.first-menu a { float:left; display:block; height:24px; line-height:24px; background:#e7e7e7; padding: 0;}
+.first-menu a:hover {background:#ccc;}
+.second-menu {top:24px;	right:0;}
+.second-menu a.arrow {background:#e7e7e7 url(image/li_bd.gif) no-repeat 160px 10px; border-bottom:1px solid #fff;}
+.second-menu a.arrow:hover {background:#ccc url(image/nav_bd2.gif) no-repeat 160px 10px; color:#990000}
+.second-menu a.arrow-02 {background:#e7e7e7 url(image/li_bd.gif) no-repeat 160px 10px; border-bottom:1px solid #fff;}
+.second-menu a.arrow-02:hover {background:#ccc url(image/nav_bd2.gif) no-repeat 160px 10px; color:#990000}
+.third-menu, .fourth-menu {width:177px; top:0; left:177px; _left:88px;}
+.third-menu a {background:#e7e7e7; border-bottom:1px solid #fff;}
+.third-menu a:hover {background:#ccc; border-bottom:1px solid #fff; color:#990000}
+#subMgm {width:177px;}
+#subMgm .third-menu {left:177px; _left:88px;}
+#subMgm .fourth-menu {left:177px; _left:88px;}
+#subMusic, #subNews {width:177px;}
+</style>
+</head>
+<body onload="MM_preloadImages('image/nav1_1.gif')">
+<ul id="webmenu" class="first-menu">
+<!--走进新天-->
+<li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','image/nav1_1.gif',1)"><img src="image/nav_1.gif" alt="走进新天" name="Image1" width="97" height="24" border="0" id="Image1" /></a>
+<ul style="display: none;" id="subMusic" class="second-menu">
+<li><a href="#" class="arrow" target="_self">新闻中心</a></li>
+<li><a href="#" class="arrow" target="_self">新天介绍</a></li>
+<li><a href="#" class="arrow" target="_self">企业荣誉</a></li>
+<li><a href="#" class="arrow" target="_self">新天风采</a></li>
+<li><a href="#" class="arrow" target="_self">组织机构</a></li>
+<li><a href="#" class="arrow" target="_self">管理维护</a></li>
+</ul>
+</li>
+<!--品牌产品-->
+<li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','image/nav1_2.gif',2)"><img src="image/nav_2.gif" alt="品牌产品" name="Image2" width="97" height="24" border="0" id="Image2" /></a>
+<ul style="display: none;" id="subMusic" class="second-menu">
+<li><a href="#" class="arrow" target="_self">产品展示</a></li>
+<li><a href="#" class="arrow" target="_self">新品世界</a></li>
+<li><a href="#" class="arrow" target="_self">品牌形象</a></li>
+</ul>
+</li>
+  <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','image/nav1_3.gif',3)"><img src="image/nav_3.gif" alt="科技研发" name="Image3" width="97" height="24" border="0" id="Image3" /></a>
+    <ul id="subNews" class="second-menu">
+      <li><a href="#" class="arrow" target="_self">搜索</a>
+        <ul class="third-menu">
+          <li><a href="http://www.codefans.net/">百度</a></li>
+          <li><a href="http://www.google.cn/">Google</a></li>
+          <li><a href="http://dir.sogou.com/">搜狐</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">新闻</a>
+        <ul class="third-menu">
+          <li><a href="http://www.sina.com.cn/">新浪</a></li>
+          <li><a href="http://www.qq.com/">腾讯</a></li>
+          <li><a href="http://www.sohu.com/">搜狐</a></li>
+          <li><a href="http://www.163.com/">网易</a></li>
+          <li><a href="http://www.ifeng.com/">凤凰网</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">招聘</a>
+        <ul class="third-menu">
+          <li><a href="http://www.chinahr.com/index.htm">中华英才网</a></li>
+          <li><a href="http://www.51job.com/">前程无忧</a></li>
+          <li><a href="http://www.zhaopin.com/">智联招聘</a></li>
+          <li><a href="http://www.cjol.com/">中国人才热线</a></li>
+          <li><a href="http://www.01job.cn/">上海第一招聘</a></li>
+          <li><a href="http://www.528.com.cn/">528招聘网</a></li>
+          <li><a href="http://www.1010jz.com/">1010兼职网</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">网赚</a>
+        <ul class="third-menu">
+          <li><a href="http://www.vikecn.com/">威客中国</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">购物</a>
+        <ul class="third-menu">
+          <li><a href="#" class="arrow" target="_self">网站</a>
+            <ul class="fourth-menu">
+              <li><a href="http://www.taobao.com/">淘宝网</a></li>
+              <li><a href="http://www.dangdang.com/">当当网</a></li>
+              <li><a href="http://www.eachnet.com/">易趣网</a></li>
+              <li><a href="http://youa.baidu.com/">百度有啊</a></li>
+              <li><a href="http://www.amazon.cn/">卓越网</a></li>
+              <li><a href="http://www.paipai.com/">拍拍网</a></li>
+              <li><a href="http://china.alibaba.com/">阿里巴巴</a></li>
+              <li><a href="http://www.360buy.com/">京东商城</a></li>
+              <li><a href="http://www.gumzzi.com/">锦上添花女装</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="arrow" target="_self">快递公司</a>
+            <ul class="fourth-menu">
+              <li><a href="http://www.sto.cn/">申通快递</a></li>
+              <li><a href="http://www.yto.net.cn/">圆通快递</a></li>
+              <li><a href="http://www.ems.com.cn/">EMS特快专递</a></li>
+              <li><a href="http://www.sf-express.com/">顺丰快递</a></li>
+              <li><a href="http://www.ttkdex.com/">天天快递</a></li>
+              <li><a href="http://www.zto.cn/">中通快递</a></li>
+              <li><a href="http://www.yundaex.com/www/index.html">韵达快运</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="arrow" target="_self">电子支付</a>
+            <ul class="fourth-menu">
+              <li><a href="https://www.alipay.com/">支付宝</a></li>
+              <li><a href="https://www.99bill.com/">快钱</a></li>
+              <li><a href="https://www.tenpay.com/">财付通</a></li>
+              <li><a href="https://www.paypal.com/c2">paypal</a></li>
+              <li><a href="https://www.baifubao.com/">百付宝</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">科技</a>
+        <ul class="third-menu">
+          <li><a href="http://www.patent-cn.com/">专利之家</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','image/nav1_4.gif',4)"><img src="image/nav_4.gif" alt="服务中心" name="Image4" width="97" height="24" border="0" id="Image4" /></a>
+    <ul style="display: none;" id="subMgm" class="second-menu">
+      <li><a href="#" class="arrow" target="_self">游戏</a>
+        <ul class="third-menu">
+          <li><a href="#" class="arrow" target="_self">网络游戏</a>
+            <ul class="fourth-menu">
+              <li><a href="http://wow.163.com/">魔兽世界</a></li>
+              <li><a href="http://au.9you.com/web_v5/index_top.html">劲舞团</a></li>
+              <li><a href="http://popkart.tiancity.com/homepage/">跑跑卡丁车</a></li>
+              <li><a href="http://zt.ztgame.com/">征途</a></li>
+              <li><a href="http://wd.gyyx.cn/">问道</a></li>
+              <li><a href="http://ploy.bnb.sdo.com/20070904/web/flash.htm">泡泡堂</a></li>
+              <li><a href="http://rxjh.17game.com/">热血江湖</a></li>
+              <li><a href="http://www.fsjoy.com/">街头篮球</a></li>
+              <li><a href="http://xyq.163.com/">梦幻西游</a></li>
+              <li><a href="http://speed.qq.com/index.shtml">QQ飞车</a></li>
+              <li><a href="http://mxd.sdo.com/homepage.htm">冒险岛</a></li>
+              <li><a href="http://sh.xoyo.com/">水浒Q传</a></li>
+              <li><a href="http://cf.qq.com/">穿越火线</a></li>
+              <li><a href="http://tl.changyou.com/">天龙八部</a></li>
+              <li><a href="http://zhuxian.wanmei.com/">诛仙</a></li>
+              <li><a href="http://wulin2.wanmei.com/">武林外传</a></li>
+              <li><a href="http://world2.wanmei.com/">完美世界</a></li>
+              <li><a href="http://sf.17game.com/index.php">特种部队</a></li>
+              <li><a href="http://mir2.sdo.com/web/index.html">热血传奇</a></li>
+            </ul>
+          </li>
+          <li><a href="http://www.17173.com/">17173</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">电影</a>
+        <ul class="third-menu">
+          <li><a href="http://www.xunlei.com/">迅雷看看</a></li>
+          <li><a href="http://www.gougou.com/">狗狗搜索</a></li>
+          <li><a href="http://www.verycd.com/">电驴下载</a></li>
+          <li><a href="http://www.80s.cn/">80s手机电影</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">视频</a>
+        <ul class="third-menu">
+          <li><a href="http://www.youku.com/">优酷</a></li>
+          <li><a href="http://www.tudou.com/">土豆</a></li>
+          <li><a href="http://www.ku6.com/">酷6</a></li>
+          <li><a href="http://6.cn/">六间房</a></li>
+          <li><a href="http://www.56.com/">56</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">音乐</a>
+        <ul class="third-menu">
+          <li><a href="http://mp3.baidu.com/">百度-MP3</a></li>
+          <li><a href="http://www.qq163.com/">QQ163</a></li>
+          <li><a href="http://www.1ting.com/">一听音乐</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

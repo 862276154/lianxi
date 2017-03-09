@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>月考</title>
+    <link rel="stylesheet" type="text/css" href="css/月考.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css"/>
+</head>
+<body>
+	<div class="wrapper">
+				<header>
+			<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><img src="img/yuekao_01.jpg"/></div>
+		            <div class="swiper-slide">Slide 2</div>
+		            <div class="swiper-slide"><img src="img/yuekao_01.jpg"/></div>
+		            <div class="swiper-slide">Slide 4</div>
+		            <div class="swiper-slide"><img src="img/yuekao_01.jpg"/></div>
+		            <div class="swiper-slide">Slide 6</div>
+		            <div class="swiper-slide"><img src="img/yuekao_01.jpg"/></div>
+		            <div class="swiper-slide">Slide 8</div>
+		            <div class="swiper-slide"><img src="img/yuekao_01.jpg"/></div>
+		            <div class="swiper-slide">Slide 10</div>
+		        </div>
+		    </div>    
+			<!--<img src="img/yuekao_01.jpg"/>-->
+		</header>
+		<div class="all_w">
+			<div class="w_one">1</div>
+			<div class="w_three">2</div>
+			<div class="w_three">				
+
+		<section>
+			<div>
+			<div class="search">
+				<p><img src="img/yuekao_04.jpg"/>搜索想要看的电视节目或频道</p>
+				<div class="choujiang">
+					<dl>
+						<dt><img src="img/tutu_03.jpg"/></dt>
+						<dd>抽奖</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_05.jpg"/></dt>
+						<dd>频道</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_07.jpg"/></dt>
+						<dd>电影</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_09.jpg"/></dt>
+						<dd>综艺</dd>
+					</dl>
+				</div>
+				<div class="choujiang2">
+					<dl>
+						<dt><img src="img/tutu_15.jpg"/></dt>
+						<dd>小米直播</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_16.jpg"/></dt>
+						<dd>体育</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_17.jpg"/></dt>
+						<dd>新闻</dd>
+					</dl>
+					<dl>
+						<dt><img src="img/tutu_18.jpg"/></dt>
+						<dd>收藏</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="dianshiju">
+				<p>电视剧<span><img src="img/zzz_03.jpg"/></span></p>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/yuekao_29.jpg"/></dt>
+					<dd>下午剧场:战火中的兄弟...</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/yuekao_29.jpg"/></dt>
+					<dd>下午剧场:战火中的兄弟...</dd>
+				</dl>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/yuekao_29.jpg"/></dt>
+					<dd>下午剧场:战火中的兄弟...</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/yuekao_29.jpg"/></dt>
+					<dd>下午剧场:战火中的兄弟...</dd>
+				</dl>
+			</div>
+			</div>
+		</section>
+			</div>
+			
+			<div class="w_four">4</div>
+		</div>	
+		<footer>
+			<dl>
+				<dt><img src="img/yuekao_33.jpg"/></dt>
+				<dd>万能遥控</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/yuekao_35.jpg"/></dt>
+				<dd>小米电视</dd>
+			</dl>
+			<dl class="bg_color">
+				<dt><img src="img/yuekao_38.jpg"/></dt>
+				<dd>精彩直播</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/yuekao_41.jpg"/></dt>
+				<dd>个人中心</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script>
+	var myscroll=new IScroll("section",{
+					scrollbars:true,
+					disableMouse:true,
+					disablePointer:true,
+					scrollbars:'custom'
+			});
+			
+	 var swiper = new Swiper('.swiper-container', {      
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 1500,
+        loop:true,
+        autoplayDisableOnInteraction: false
+    });
+    var btn=$('footer>dl');
+    $('.all_w>div').hide().eq(2).show();
+    btn.on('click',function(){
+    	var _index=$(this).index();
+    	$(this).addClass('bg_color').siblings().removeClass('bg_color');
+    	$('.all_w>div').hide().eq(_index).show();
+    });
+</script>
+</html>

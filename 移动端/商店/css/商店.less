@@ -1,0 +1,184 @@
+@import url("reset.css");
+.whb(@w,@h,@bg){
+    width: @w;
+    height: @h;
+    background: @bg;
+}
+.r{
+    position: relative;
+}
+.a{
+    position: absolute;
+}
+.f(@f){
+    float: @f;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient:@ver;
+}
+html{
+    font-size: 62.5%;
+}
+html,body{
+    .whb(100%,100%,none);
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    .whb(100%,100%,none);
+    .box(vertical);
+    overflow: hidden;
+    header{
+        .whb(100%,3.5rem,#191b20);
+        .box(horizontal);
+        color: white;
+        line-height: 3.5rem;
+        padding: 0 0.8rem;
+        box-sizing: border-box;
+        img{
+            vertical-align: middle;
+        }
+        h1{
+            -webkit-box-flex: 1;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+    }
+    .all_s{
+        -webkit-box-flex: 1;
+        .box(horizontal);
+//      overflow: hidden;
+        .s_one{}
+        .s_two{
+            .whb(100%,auto,none);
+            .box(vertical);
+        section{
+        overflow-y: auto;
+        &::-webkit-scrollbar{width: 0;}
+        -webkit-box-flex: 1;
+        .nav{
+            .box(horizontal);
+            .whb(100%,5.1rem,none);
+            border-bottom: 0.5rem solid #eeeced;
+            padding-top: 0.9rem;
+            box-sizing: border-box;
+                .r;
+            div:nth-child(1){
+                margin-left: 1.2rem;
+                margin-top: 0.6rem;
+                color: #767878;
+                font-weight: bold;
+            }
+            .inp{
+                -webkit-box-flex: 1; 
+                padding: 0 1.5rem;
+                input{
+                    .whb(100%,2.5rem,#eeeced);
+                    outline: none;
+                    border: none;
+                    border-radius: 1rem;
+                    padding-left: 4.7rem;
+                    box-sizing: border-box;
+                } 
+                span{
+                    .a;
+                    top: 1.4rem;
+                    left: 5.6rem;
+                }  
+            }
+        }
+        .banner{
+            .box(horizontal);
+            .whb(100%,3.6rem,none);
+            border-bottom: 2px solid #f7f7f7;
+            &>div{
+                background: url(../img/qqqqqq_03.jpg) no-repeat right center;
+                -webkit-box-flex: 1;
+                text-align: center;
+                padding-top: 1.2rem;
+             span{
+                 display: inline-block;
+                 .whb(0.7rem,0.7rem,none);
+                 border: 1px solid black;
+                 border-top: none;
+                 border-right: none;
+                 transform: rotate(-45deg);
+                 margin-left: 0.6rem;
+             }
+            }
+            div:nth-child(3){
+                background: none;
+            }
+        }
+        .main{
+            padding: 0 0.9rem;
+            box-sizing: border-box;
+            color: #d7dee3;
+            dl{
+            padding-top: 1rem;
+                dt{
+                    .f(left);
+                    margin-right: 0.7rem;
+                img{
+                    height: 6rem;
+                }
+                }
+                dd{
+                    ul{
+                        li:nth-child(1){
+                            font-size: 1.4rem;
+                            color: #575757;
+                            font-weight: bold;
+                        }
+                        li:nth-child(2){
+                            margin-top: 0.3rem;
+                        }
+                        li:nth-child(3){
+                            margin-top: 0.8rem;
+                            span{
+                                margin-right: 1.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+            p{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                border-bottom: 1px solid #f3f3f3;
+                padding: 0.2rem 0 1rem 0;
+                //margin-bottom: 1rem;
+            }
+        }
+    }
+        }
+        .s_three{}
+        .s_four{}
+        .s_five{}
+    }
+
+    
+    footer{
+         .whb(100%,4.3rem,none);
+         border-top: 1px solid #e6e6e6;
+         .box(horizontal);
+         padding-top: 0.8rem;
+         box-sizing: border-box;
+         color: #a3abaf;
+         dl{
+             -webkit-box-flex: 1;
+             text-align: center;
+         }
+         dd{
+             line-height: 1.1rem;
+         }
+        .hong{
+            color: #fa5b62;
+        } 
+    }
+}

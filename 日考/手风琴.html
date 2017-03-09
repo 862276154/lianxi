@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手风琴</title>
+		<script src="jquery-3.1.1.js"></script>
+		<style>
+			*{margin: 0; padding: 0;} 
+			img{    
+				border:0;   
+			 }  
+			#container{
+				width:680px;
+				height: 300px;
+				margin: 100px auto;
+				position: relative;
+				border:3px solid red; 
+				overflow: hidden;       
+				}          
+			#container #content{         
+					list-style: none;       
+					}          
+			#container #content li{         
+				width:590px;         
+				height:300px;         
+				position: absolute;       
+				}          
+				#container #content li.second{         
+					left:590px;       
+					}          
+					#container #content li.third{         
+						left:620px;       
+						}          
+						#container #content li.forth{         
+							left:650px;       
+							}          
+							#container #content li h3{         
+								float:left;         
+								width: 24px;         
+								height:294px;         
+								border:3px solid blue;         
+								background-color: yellow;         
+								cursor: pointer;       
+								}          
+								#container #content li div{         
+									float: left;         
+									width: 560px;         
+									height:300px;       
+									}   
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="content">  
+				<li class="first">   
+					<h3>真</h3>   
+					<div><img src="1.jpg"/></div>  
+				</li>         
+				<li class="second">   
+					<h3>的</h3>        
+					<div><img src="2.jpg"/></div>   
+				</li>       
+				<li class="third">   
+					<h3>爱</h3>      
+					<div><img src="3.jpg"/></div> 
+				</li>      
+				<li class="forth">    
+					<h3>你</h3>       
+					<div><img src="4.jpg"/></div>     
+				</li>    
+			</ul>    
+		</div>
+	</body>
+	<script>
+		   $(function(){            
+		   	$("#container #content li.first h3").mouseenter(function(){           
+		   	$("#container #content li.second").stop().animate({"left":590}, 1000);
+		   	$("#container #content li.third").stop().animate({"left":620}, 1000); 
+		   	$("#container #content li.forth").stop().animate({"left":650}, 1000); 
+		   	});            
+		   	$("#container #content li.second h3").mouseenter(function(){           
+		   	$("#container #content li.second").stop().animate({"left":30}, 1000); 
+		   	$("#container #content li.third").stop().animate({"left":620}, 1000);  
+		   	$("#container #content li.forth").stop().animate({"left":650}, 1000); 
+		   	});           
+		   	$("#container #content li.third h3").mouseenter(function(){        
+		   		$("#container #content li.second").stop().animate({"left":30}, 1000);
+		   		$("#container #content li.third").stop().animate({"left":60}, 1000);
+		   		$("#container #content li.forth").stop().animate({"left":650}, 1000);
+		   	}); $("#container #content li.forth h3").mouseenter(function(){
+		   		$("#container #content li.second").stop().animate({"left":30}, 1000);          
+		   		$("#container #content li.third").stop().animate({"left":60}, 1000);      
+		   		$("#container #content li.forth").stop().animate({"left":90}, 1000);     
+		   	});             
+		   });
+	</script>
+</html>

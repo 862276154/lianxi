@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>bootstrap</title>   
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;padding: 0;
+	}
+	.navbar-header img{
+		height: 25px;
+	}
+	.banner{
+		background: url(img/d.jpg) repeat;
+		color: #fff;
+		margin-top: 50px;
+		padding-bottom: 50px;
+		margin-bottom: 30px;
+	}
+	.banner>div{
+		line-height: 90px;
+		padding-top: 20px;
+	}
+	.banner_font{
+		font-size: 18px;
+		max-width: 480px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 25px;
+		margin-bottom: 20px;
+	}
+	.main img{
+		width: 100%;
+		height: auto;
+	}
+</style>
+<body>
+	<div class="wrapper">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<button class="navbar-toggle collapsed" data-toggle="collapse" data-targer="#mynavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-header">
+					<a class="navbar-brand logo"><img src="img/a.png"/></a>
+					<p class="navbar-text">服务热线：0592-5589953</p>
+				</div>
+			<div class="collapse navbar-collapse" id="mynavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="#">案例</a></li>
+					<li><a href="#">关于</a></li>
+					<li><a href="#">动态</a></li>
+					<li><a href="#">联系</a></li>
+				</ul>
+			</div>
+			</div>
+		</nav>
+		<div class="banner">
+			<div class="h2 text-center">互动创想与您携手</div>
+			<p class="banner_font">
+				互动创想主要从事互联网+相关业务，以构建、创想、执行、策划流程化服务精耕细作
+			</p>
+			<p class="text-center">
+				<a href="#" class="btn btn-info">登录</a>
+				<a href="#" class="btn btn-danger">注册</a>
+			</p>
+		</div>
+		<div class="container main">
+			<div class="row">
+				<dl class="col=md-4 col-xs-12">
+					<dt><img src="img/c.png"/></dt>
+					<dd>
+						<h2 class="text-center">青木服饰品牌官网</h2>
+						<p class="text-center">企业网站，品牌服饰网站<br />
+						pc，手机</p>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

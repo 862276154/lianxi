@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div id="myDiv">
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+		</div>
+		<button id="checkedAll">全选</button>
+		<button id="unchecked">反选</button>	
+		<button id="tianjia">添加</button>
+		<button id="shanchu">删除</button>
+	</body>			
+	<script>
+		$(function(){
+			//全选
+			$('#checkedAll').click(function(){
+				if($('input').is(':checked')){
+					$('input').prop('checked',false);
+				}else{
+					$('input').prop('checked',true);
+				}
+			});
+			//反选
+			$('#unchecked').click(function(){
+				$('#myDiv').find('input').each(function(){
+					if($(this).is(':checked')){
+						$(this).removeAttr('checked');
+						$(this).prop('checked',false);
+					}else{
+						$(this).removeAttr('checked');
+						$(this).prop('checked','checked');
+					}
+				})
+			});
+			//添加
+			$('#tianjia').click(function(){
+//				alert(11)
+				$('#myDiv').addClass('input');
+			});
+		});
+	</script>
+</html>

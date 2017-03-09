@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+//封装圆的宽高透明
+.yuan(@w,@h,@opa){
+    width: @w;
+    height: @h;
+    opacity: @opa;
+}
+.wrapper{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 50px auto;
+    //animation实现动画:name duration（速度）
+    //说明：name是要执行的动画的名称
+    //infinite:动画反复执行
+    -webkit-animation: donghua 3s linear ;
+    
+//  .transAnit(-webkit-transform,0.7s);
+    //鼠标放上去旋转
+//  &:hover{
+//       -webkit-transform: rotateZ(90deg);
+//  }
+}
+@-webkit-keyframes donghua{
+    0%{
+        -webkit-transform: rotate(0deg);
+    }
+    25%{
+        -webkit-transform: rotate(180deg);
+    }
+    50%{
+        -webkit-transform: rotate(360deg);
+    }
+    75%{
+        -webkit-transform: rotate(540deg);
+    }
+    100%{
+        -webkit-transform: rotate(720deg);
+    }
+}
+.transAnit(@prop:all,@speed:0.5s){
+    -webkit-transition: @prop @speed;
+}
+.box{
+    width: 20px;    
+    position: absolute;
+    left: 40px;
+    //定旋转中心点
+    -webkit-transform-origin: center bottom;
+    div{
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+}
+.one{
+    div{
+        background: #00A891;
+    }
+}
+.two{
+    -webkit-transform: rotateZ(90deg);
+    div{
+        background: #1F4C59;
+    }
+}
+.three{
+    -webkit-transform: rotateZ(180deg);
+    div{
+        background: #FFB265;
+    }
+}
+.four{
+    -webkit-transform: rotateZ(270deg);
+    div{
+        background: #FF5551;
+    }
+}
+.round1{
+    .yuan(20px,20px,1);
+    //width: 20px;
+    //height: 20px;
+    //border-radius: 50%;
+    //background: #00A891;
+}
+.round2{
+    .yuan(15px,15px,0.8);
+    //width: 15px;
+    //height: 15px;
+    //border-radius: 50%;
+   // background: #00A891;
+    //opacity: 0.8;
+    //margin: 0 auto;
+}
+.round3{
+    .yuan(10px,10px,0.5);
+    //width: 10px;
+    //height: 10px;
+    //border-radius: 50%;
+    //background: #00A891;
+    //opacity: 0.5;
+    //margin: 0 auto;
+}
+.round4{
+    .yuan(5px,5px,0.3);
+    //width: 5px;
+    //height: 5px;
+    //border-radius: 50%;
+    //background: #00A891;
+    //opacity: 0.3;
+    //margin: 0 auto;
+}

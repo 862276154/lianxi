@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>切换</title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;			
+		}
+		.box{
+			width: 480px;
+			height: 40px;
+			background-color: pink;
+		}
+		.box ul{
+			width: 480px;
+			height: 40px;
+			background-color: pink;
+		}
+		.box ul li{
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			float: left;
+			text-align: center;
+			cursor: pointer;
+		}
+		.bgColor{
+			color: red;
+			background-color: orange;
+		}
+		.box2{
+			width: 480px;
+			/*width: 2880px;*/
+			height: 300px;
+			background-color: blue;
+			overflow: hidden;
+		}
+		.box2 ul li{
+			width: 480px;
+			height: 300px;
+			background-color: #0044DD;
+			text-align: center;
+			line-height: 300px;
+			float: left;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<div class="all">
+			<div class="box">
+			<ul>
+			<li class="bgColor">新闻首页</li>
+			<li>国内新闻</li>
+			<li>国际新闻</li>
+			<li>体育前线</li>
+			<li>财经报道</li>
+			<li>军事快报</li>
+		</ul>
+		</div>
+		<div class="box2">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+		</div>
+		
+	</body>
+	<script>
+		$(function(){
+			var Btn = $('.box>ul>li');
+			var oUl = $('.box2>ul>li');
+			var num = 0;
+			var imgWidth = $(oUl).eq(0).width();
+			Btn.click(function(){
+				$(this).addClass('bgColor').siblings().removeClass('bgColor');
+				var _index = $(this).index();
+				//num = _index;
+				oUl.hide().eq(_index).show();
+		});
+			var timer;
+			timer = setInterval(Play,1000);
+				function Play(){
+					num++;
+					if(num == 6){
+						num = 0;
+					}
+					Btn.eq(num).addClass('bgColor').siblings().removeClass('bgColor');					
+					oUl.hide().eq(num).show();
+				}
+				$('.all').mousemove(function(){
+					clearInterval(timer);
+				})
+				$('.all').mouseout(function(){
+					timer = setInterval(Play,1000);
+				});
+		});
+	</script>
+</html>

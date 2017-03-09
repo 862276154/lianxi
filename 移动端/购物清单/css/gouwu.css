@@ -1,0 +1,191 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 0.625;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrap header {
+  width: 100%;
+  height: 3.7rem;
+  background: #1b1b20;
+  color: white;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  line-height: 3.7rem;
+}
+.wrap header > div {
+  padding: 0 1rem;
+}
+.wrap header > div img {
+  vertical-align: middle;
+  margin-top: -0.2rem;
+}
+.wrap header > div span {
+  margin-left: 0.4rem;
+}
+.wrap header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+}
+.wrap section {
+  -webkit-box-flex: 1;
+  overflow: auto;
+}
+.wrap section .banner {
+  padding: 1.4rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #f75b6a;
+  border-bottom: 0.6rem solid #e1e1e1;
+  position: relative;
+}
+.wrap section .banner > div {
+  padding: 0 0.9rem;
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+}
+.wrap section .banner > input {
+  display: block;
+  -webkit-box-flex: 1;
+  margin: 0 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  background: #f1f5f8;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+}
+.wrap section .banner input::-webkit-input-placeholder {
+  color: #f75b6a;
+}
+.wrap section .banner .ding {
+  position: absolute;
+  top: 2rem;
+  left: 12rem;
+}
+.wrap section .main {
+  padding: 0 0.8rem;
+  border-bottom: 0.5rem solid #e1e1e1;
+}
+.wrap section .main dl {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e0e5eb;
+}
+.wrap section .main dl dt {
+  float: left;
+  margin-right: 0.9rem;
+}
+.wrap section .main dl dt img {
+  width: auto;
+  height: 6rem;
+  background: none;
+}
+.wrap section .main dl h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.wrap section .main dl p {
+  font-size: 1rem;
+  color: #bcbcbc;
+}
+.wrap section .main dl h3 {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #6db4ff;
+}
+.wrap section .main dl h3 #tupian {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.wrap section .main > div {
+  padding: 0.9rem 0;
+}
+.wrap section .main .main_one {
+  float: left;
+}
+.wrap section .main .main_one p {
+  color: #213041;
+}
+.wrap section .main .main_one p span {
+  color: #f53144;
+}
+.wrap section .main .main_one p font {
+  color: white;
+  background: #65c338;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  margin-right: 0.4rem;
+}
+.wrap section .main .main_one .lia {
+  margin-top: 0.8rem;
+}
+.wrap section .main .main_one b {
+  font-size: 1.6rem;
+  margin: 0 0.5rem;
+}
+.wrap section .main .daimai {
+  float: right;
+  width: 5rem;
+  height: 2.6rem;
+  background: #ff5a64;
+  color: white;
+  margin-top: 1.3rem;
+  line-height: 2.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+.wrap section .main .daimai img {
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+.wrap footer {
+  width: 100%;
+  height: 4.4rem;
+  background: none;
+  border-top: 1px solid #ccc;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #979ea6;
+}
+.wrap footer dl {
+  width: 20%;
+  height: auto;
+  background: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+.wrap footer .hong {
+  color: #ffb6ba;
+}
+.wrap footer .re {
+  position: relative;
+}
+.wrap footer .ab {
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+}

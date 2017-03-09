@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.gan{
+			width: 800px;
+		}
+		p{
+			width: 800px;
+			height: 50px;
+			color: red;
+			line-height: 40px;
+			font-size: 30px;
+		}
+		table{
+			width: 800px;
+		}
+		th{
+			width: 120px;
+			height: 50px;
+			background: #66CD00;
+			color: #fff;
+		}
+		tr{
+			line-height: 35px;
+			text-align: center;
+		}
+		.odd{
+			background:#333333 ;
+		}
+		.even{
+			background: #AAEEFF;
+		}
+		.jintian{
+			background: orangered;
+			color: #fff;
+		}
+		#dian{
+			margin: 20px 300px;
+			width: 200px;
+			line-height: 50px;
+			background: blue;
+			cursor: pointer;
+			color: #fff;
+		}
+		/*.head{
+			width: 800px;
+			height: 40px;
+			margin: 10px auto;
+			background: #0044DD;
+		}
+		h2{
+			margin: 0 auto;
+		}*/
+	</style>
+	<body>
+		<div class="head"><h2>当前城市：<input type="text" /><button id="btn">搜索</button></h2></div>		
+		<div class="gan"><marquee></marquee></div>
+		<table></table>
+		<div class="footer"></div>
+	</body>
+	<script>
+		$(function(){
+			$('#btn').click(function(){
+				var $val = $(':input[type=text]').val().split(' ').join('');
+				if(!/^[\u4e00-\u9fa5]{2,}$/.test($val)){
+					alert('输入两个以上汉字');
+				};
+				$.ajax({
+					type:"get",
+					url:"http://wthrcdn.etouch.cn/weather_mini?city="+$val,
+					async:true,
+					data:{},
+					dataType:'jsonp',
+					success:function(data){
+						console.log(data)
+						var str = "<p>"+$val+data.data.ganmao+"</p>";
+						$('marquee').html('').append(str);
+						var str2 = "<tr><th>日期</th><th>风力</th><th>风向</th><th>最高气温</th><th>最低气温</th><th>天气状况</th></tr>";
+						$('table').html('').append(str2);
+						var $qq = data.data.forecast;
+						var str4 = "<tr><td>"+data.data.yesterday.date+"</td><td>"+data.data.yesterday.fl+"</td><td>"+data.data.yesterday.fx+"</td><td>"+data.data.yesterday.high+"</td><td>"+data.data.yesterday.low+"</td><td>"+data.data.yesterday.type+"</td></tr>";
+						$('table').append(str4);
+						$.each($qq, function(i,val) {
+							var str3 = "<tr><td>"+val.date+"</td><td>"+val.fengli+"</td><td>"+val.fengxiang+"</td><td>"+val.high+"</td><td>"+val.low+"</td><td>"+val.type+"</td></tr>";
+							$('table').append(str3);
+							$('tr:odd').addClass('odd');
+							$('tr:even').not(':first').addClass('even');
+							$('table tr').eq(2).addClass('jintian').find('td:first').append('<span>(今天)</span>');
+						});//
+						var str4 = "<button id='dian'>查看最近一周天气↓</button>";
+						$('.footer').append(str4);
+						$('tr:gt(0)').not('.jintian').hide();
+						$('#dian').click(function(){
+							if($('tr:gt(0)').not('.jintian').is(':visible')){
+								$('tr:gt(0)').not('.jintian').hide();
+								$(this).html('查看最近一周天气↓');
+							}else{
+								$('tr:gt(0)').not('.jintian').show();
+								$(this).html('收起');
+							}
+						});
+					}
+				});
+			});
+		});
+	</script>
+</html>

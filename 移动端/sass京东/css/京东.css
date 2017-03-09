@@ -1,0 +1,137 @@
+@import url("reset.css");
+html {
+  font-size: 62.5%; }
+
+html body, .wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  background: #f3f3f3; }
+  html body header .lunbo, .wrapper header .lunbo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: none; }
+    html body header .lunbo img, .wrapper header .lunbo img {
+      width: 100%;
+      height: auto;
+      background: none; }
+  html body header .h, .wrapper header .h {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    width: 100%;
+    height: auto;
+    background: none;
+    padding: 0 0.8rem;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    z-index: 99; }
+    html body header .h > div, .wrapper header .h > div {
+      color: white;
+      height: 35px;
+      text-align: center; }
+    html body header .h .h_center, .wrapper header .h .h_center {
+      -webkit-box-flex: 1;
+      padding: 0 0.5rem; }
+      html body header .h .h_center > input, .wrapper header .h .h_center > input {
+        width: 100%;
+        height: 28px;
+        background: none;
+        background: #bf979d;
+        text-align: center;
+        outline: none;
+        border: none; }
+      html body header .h .h_center input::-webkit-input-placeholder, .wrapper header .h .h_center input::-webkit-input-placeholder {
+        color: white; }
+  html body section, .wrapper section {
+    -webkit-box-flex: 1;
+    overflow-y: auto; }
+    html body section::-webkit-scrollbar, .wrapper section::-webkit-scrollbar {
+      width: 0; }
+    html body section .nav, .wrapper section .nav {
+      color: #b9babb;
+      display: -webkit-box;
+      -webkit-box-orient: horizontal;
+      margin-top: 10px; }
+      html body section .nav dl, .wrapper section .nav dl {
+        -webkit-box-flex: 1;
+        text-align: center; }
+    html body section .inp, .wrapper section .inp {
+      padding: 0 8px;
+      box-sizing: border-box; }
+      html body section .inp h1, .wrapper section .inp h1 {
+        -webkit-box-flex: 1;
+        width: 100%;
+        height: 30px;
+        background: white;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold; }
+        html body section .inp h1 span1, .wrapper section .inp h1 span1 {
+          font-family: "ms outlook";
+          font-weight: bold; }
+          html body section .inp h1 span1 span, .wrapper section .inp h1 span1 span {
+            font-weight: bold;
+            background: #f02424;
+            color: white;
+            padding: 3px 5px; }
+        html body section .inp h1 font, .wrapper section .inp h1 font {
+          color: #f58181;
+          margin-right: 3px; }
+    html body section .main, .wrapper section .main {
+      width: 100%;
+      height: auto;
+      background: white;
+      margin-top: 6px;
+      font-weight: bold; }
+      html body section .main .m_top, .wrapper section .main .m_top {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        padding: 0 7px;
+        margin-bottom: 12px; }
+        html body section .main .m_top img, .wrapper section .main .m_top img {
+          margin-left: 4px; }
+        html body section .main .m_top h3, .wrapper section .main .m_top h3 {
+          -webkit-box-flex: 1; }
+        html body section .main .m_top span1, .wrapper section .main .m_top span1 {
+          margin-right: 5px; }
+        html body section .main .m_top span2, .wrapper section .main .m_top span2 {
+          margin: 0 2px; }
+        html body section .main .m_top span, .wrapper section .main .m_top span {
+          border: 1px solid #ccc;
+          padding: 0 5px; }
+        html body section .main .m_top font, .wrapper section .main .m_top font {
+          color: #ef1515; }
+      html body section .main .m_bot, .wrapper section .main .m_bot {
+        overflow-x: auto;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal; }
+        html body section .main .m_bot::-webkit-scrollbar, .wrapper section .main .m_bot::-webkit-scrollbar {
+          width: 0; }
+        html body section .main .m_bot dl, .wrapper section .main .m_bot dl {
+          text-align: center;
+          margin: 0 10px; }
+    html body section .hong, .wrapper section .hong {
+      width: 100%;
+      height: auto;
+      background: none; }
+      html body section .hong img, .wrapper section .hong img {
+        width: 100%;
+        height: auto;
+        background: none; }
+  html body footer, .wrapper footer {
+    width: 100%;
+    height: 44px;
+    background: white;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    padding-top: 5px; }
+    html body footer dl, .wrapper footer dl {
+      -webkit-box-flex: 1;
+      text-align: center; }
+    html body footer .bian, .wrapper footer .bian {
+      color: #f22e2e; }

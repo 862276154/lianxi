@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+	<select name="" id='one'>
+		<option value="">选择省</option>
+	</select>
+	<select name="" id="two">
+		<option value="">选择市</option>
+	</select>
+	<select name="" id="three">
+		<option value="">选择县/区</option>
+	</select>
+</body>
+	<script type="text/javascript">
+		$(function(){
+			function getAjax(){
+				$.ajax({
+					type:"get",
+					url:"a.txt",
+					async:true,
+					data:{},
+					dataType:'json',
+					success:function(data){
+						//console.log(data)
+						$province = data.p;
+						$city = data.c;
+						$area = data.a;
+						$.each($province, function(i,val) {
+							var str = "<option>"+val+"</option>";
+							$('#one').append(str);
+						});
+						$('#one').change(function(){
+							$('#two').html("<option value=''>输入市</option>");
+							$('#three').html("<option value=''>输入区/县</option>");
+							var worth = $('#one').val();
+							//console.log(worth)
+							$.each($city[worth], function(_i,_val) {
+								var str2 = "<option>"+_val+"</option>";								
+								$("#two").append(str2);
+							});
+						});
+						$('#two').change(function(){
+							$('#three').html("<option value=''>输入区/县</option>");
+							var town = $('#one').val()+'-'+$("#two").val();
+							$.each($area[town], function(__i,__val){
+								var str3 = "<option>"+__val+"</option>";
+								$('#three').append(str3);
+							})
+						});
+					}
+				});
+			}
+			getAjax();
+		});
+	</script>
+</html>

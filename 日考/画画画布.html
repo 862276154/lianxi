@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding: 0;
+			}
+			#canvas{
+				display: block;
+				width: 700px;
+				height: 400px;
+				margin: 50px auto;
+				border: 1px solid #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="700" heigt="400"></canvas>
+		<script type="text/javascript">
+			new LineChart({
+				x:['1月','2月','3月','4月','5月','6月'],
+				y:['0','50','100','150','200','250','300'],
+				xUnit:'月',
+				yUnit:'万元/m',
+				data:[{"color":"red",da:[50,90,80,160,70,30]},
+					  {"color":"blue",da:[70,100,120,60,80,60]},
+				]
+			},document.querySclector("canvas"));//通过选择器去获取对象
+			
+		</script>
+	</body>
+</html>

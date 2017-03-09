@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+	<script src="js/zepto.min.js"></script>
+<style>
+	*{
+		margin: 0;padding: 0;
+	}
+	.box{
+		height: 200px;
+		width 300px;
+		border: 1px solid #ccc;
+		overflow: auto;
+	}
+	.box p{
+		padding-left: 20px;
+		height: 20px;
+		background: purple;
+		line-height: 20px;
+	}
+</style>
+</head>
+<body>
+	<div class="box"></div>
+	<input type="text" />
+	<input type="text" id="txt"/>
+	<select name="" id="Select">
+		<option value="local">local</option>
+		<option value="session">session</option>
+	</select>
+	<button id="save">保存数据</button>
+	<button id="load">读取数据</button>
+	<script>
+		var txt = document.getElementById('txt');
+		var Select = document.getElementById('Select');
+		var save = document.getElementById('save');
+		var load = document.getElementById('load');
+		var localLength = 0;
+		var sessionLength = 0;
+		var Select_val = '';
+		var local_ID = window.localStorage.length,session_ID = window.sessionStorage.length;
+		var box = document.getElementsByClassName('box')[0];
+		save.onclick = function(){
+			var txt_val = txt.value;
+			Select_val = Select.value;
+//			localLength = window.localStorage.length;
+//			sessionLength = window.sessionStorage.length;
+			//console.log(localLength,sessionLength);
+			if(Select_val == 'local'){
+				local_ID++;
+				localStorage.setItem(local_ID,txt_val);
+			}else{
+				session_ID++;
+				sessionStorage.setItem(session_ID,txt_val);
+			}
+		}
+		load.onclick = function(){
+			Select_val = Select.value;
+			localLength = window.localStorage.length;
+			sessionLength = window.sessionStorage.length;
+			var html='';
+			//console.log(Select_val);
+			if(Select_val == 'local'){
+				for(var i=0;i<localLength;i++){
+				html+='<p>'+localStorage.getItem(localStorage.key(i))+'</p>';
+				}
+				box.innerHTML = html;
+			}else{
+				for(var i=0;i<sessionLength;i++){
+				html+='<p>'+sessionStorage.getItem(sessionStorage.key(i))+'</p>';
+				}
+				box.innerHTML = html;
+			}
+		}
+	</script>
+</body>
+</html>

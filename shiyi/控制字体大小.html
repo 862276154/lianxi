@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+	</head>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+    .msg{
+        width: 300px;
+        margin: 100px;
+    }
+    .msg-content{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 1px;
+    }
+    .msg-content span{
+        display: block;
+        float: left;
+        margin: 0 2px;
+        padding: 4px 10px;
+        background: #898989;
+        cursor: pointer;
+        font-size: 12px;
+        color: white;
+    }
+    p{
+        font-size: 28px;
+    }
+</style>
+<body>
+<div class="msg">
+    <div class="msg-content">
+        <span class="big">放大</span>
+        <span class="small">缩小</span>
+    </div>
+    <div>
+        <p id="box">
+            朝鲜要求中国禁止称呼“金三胖”;
+            要求中国各部门和媒体必须用尊称，叫金主席之类的。本来这是一则旧闻，2013年就有了，但是忽然这两天又被炒作起来。因为有人突然发现，百度搜索“金三胖”被限制了，无法显示搜索内容。这大概是国家宣传部门跟百度打了招呼？还是百度自己设置的敏感词？我觉得，仅仅是个人猜测，是前者。
+            虽然百度禁止显示搜索结果，那是它的自由，但是作为最大的搜索引擎，这是不是也太霸道了？以前搜索毛泽东，邓小平，最多也就显示部门内容不能显示，还是会有很多允许被放出来的内容的，这下直接屏蔽“金三胖”这三个字。金太阳的能量太大，还是百度或者说相关部门太敏感？
+        </p>
+    </div>
+</div>
+<script>
+	$(function(){
+		$('span').click(function(){
+			var $sizeEle = $('p').css('font-size');
+			
+			var $size = parseFloat($sizeEle,10);
+			
+			var cName = $(this).attr('class');
+			
+			if(cName =='big'){
+				$size+=2;
+				$sizeEle=$size+'px';
+				
+			}
+			else{
+				$size-=2;
+				$sizeEle=$size+'px';
+			}
+			$('p').css('fontSize',$sizeEle);
+		})
+	})
+</script>
+</body>
+</html>

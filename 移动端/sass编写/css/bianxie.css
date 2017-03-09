@@ -1,0 +1,55 @@
+@import url("reset.css");
+html {
+  font-size: 62.5%; }
+
+.spc-14 {
+  font-size: 14px; }
+
+.spc-18 {
+  font-size: 18px; }
+
+.spc-7 {
+  font-size: 7px; }
+
+html, body, .wrapper {
+  width: 100%;
+  height: 100%;
+  background: none; }
+
+.wrapper {
+  display: -webkit-box;
+  -webkit-box-orient: vertical; }
+  .wrapper header {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    width: 100%;
+    height: 3.4rem;
+    background: #1b82d2;
+    line-height: 3.4rem;
+    padding: 0 1.2rem;
+    box-sizing: border-box; }
+    .wrapper header img {
+      vertical-align: middle; }
+    .wrapper header h1 {
+      -webkit-box-flex: 1;
+      color: white;
+      text-align: center; }
+  .wrapper section {
+    -webkit-box-flex: 1; }
+  .wrapper footer {
+    width: 100%;
+    height: 3.9rem;
+    background: none;
+    border-top: 2px solid #dddede;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    padding-top: 0.3rem;
+    box-sizing: border-box;
+    color: #cecece; }
+    .wrapper footer .bian {
+      color: #0993f6; }
+    .wrapper footer dl {
+      -webkit-box-flex: 1;
+      text-align: center; }
+
+/*# sourceMappingURL=bianxie.css.map */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/周考三.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css"/>
+    <script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="all_w">
+	<div class="w_one">
+		<header>
+			<div><img src="img/zhoukaosan_03.jpg"/></div>
+			<div><input type="text" placeholder="大家都在搜:富二代遭撕票"/>
+			<img src="img/ss_03.jpg"/ class="ding">
+			</div>
+		</header>
+		<section>
+			<div>
+			<div class="nav">
+				 <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">推荐</div>
+            <div class="swiper-slide">要问</div>
+            <div class="swiper-slide">北京</div>
+            <div class="swiper-slide">视频</div>
+            <div class="swiper-slide">电视直播</div>
+            <div class="swiper-slide">推荐</div>
+            <div class="swiper-slide">要问</div>
+            <div class="swiper-slide">北京</div>
+            <div class="swiper-slide">视频</div>
+            <div class="swiper-slide">电视直播</div>
+        </div>
+       </div>
+				<!--<p class="tui">推荐</p>
+				<p>要问</p>
+				<p>北京</p>
+				<p>视频</p>
+				<p>电视直播</p>-->
+				<div class="tutu">
+					<img src="img/zhoukaosan_07.jpg"/>
+				</div>
+			</div>
+			<div class="all_main">
+			<div class="main">
+				<h1>习近平如何向世界讲中国故事？</h1>
+				<div>
+					<span>置顶</span><font>一点资讯</font><font>3079评</font><font>1分钟前</font>
+					<img src="img/zhoukaosan_10.jpg"/>
+				</div>
+			</div>
+			<div class="main2">
+				<div>
+					<h1>金正男遇害后解放军增兵中朝边境？国防部回应</h1>
+					<span>热门</span><font>海外网</font><font>66评</font><img src="img/zhoukaosan_10.jpg"/>
+				</div>
+				<div><img src="img/zhoukaosan_14.jpg"/></div>
+			</div>
+				<div class="main2">
+				<div>
+					<h1>云南副省长参团旅游被强迫消费   商家“1对1”紧盯</h1>
+					<span>热门</span><font>凤凰网</font><font>1123评</font><img src="img/zhoukaosan_10.jpg"/>
+				</div>
+				<div><img src="img/zhoukaosan_16.jpg"/></div>
+			</div>
+			<div class="main3">
+				<h1>30年前万元户现在值多少钱？看完只想向天再借500年...</h1>
+				<div class="tupian">
+					<div><img src="img/zhoukaosan_19.jpg"/></div>
+					<div><img src="img/zhoukaosan_21.jpg"/></div>
+					<div><img src="img/zhoukaosan_23.jpg"/></div>
+				</div>
+				<p><span>深圳租房信息共享</span><span>252评</span><span>1小时前</span><img src="img/zhoukaosan_10.jpg"/></p>				
+			</div>
+			<div class="main3">
+				<h1>30年前万元户现在值多少钱？看完只想向天再借500年...</h1>
+				<div class="tupian">
+					<div><img src="img/zhoukaosan_19.jpg"/></div>
+					<div><img src="img/zhoukaosan_21.jpg"/></div>
+					<div><img src="img/zhoukaosan_23.jpg"/></div>
+				</div>
+				<p><span>深圳租房信息共享</span><span>252评</span><span>1小时前</span><img src="img/zhoukaosan_10.jpg"/></p>				
+			</div>
+			</div>
+		</div>
+		</section>
+	</div>
+		<div class="w_two">2</div>
+		<div class="w_three">3</div>
+		<div class="w_four">4</div>
+	</div>
+		<footer>
+			<dl class="bian">
+				<dt><img src="img/zhoukaosan_28.jpg"/></dt>
+				<dd>首页</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/zhoukaosan_30.jpg"/></dt>
+				<dd>视频</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/zhoukaosan_32.jpg"/></dt>
+				<dd>应用号</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/zhoukaosan_34.jpg"/></dt>
+				<dd>我</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script>
+	var myscroll=new IScroll("section",{
+					scrollbars:true,
+					disableMouse:true,
+					disablePointer:true,
+					scrollbars:'custom'
+		});
+		
+		  var swiper = new Swiper('.nav .swiper-container', {
+	        pagination: '.swiper-pagination',
+	        slidesPerView: 5,
+	        //centeredSlides: true,
+	        paginationClickable: true,
+	        spaceBetween: 10,
+	        grabCursor: true
+    });
+    
+    $(function() {
+			var btn = $('footer>dl');
+			btn.on('click', function() {
+				var _index = $(this).index();
+				$(this).addClass('bian').siblings().removeClass('bian');
+				$(".all_w>div").hide().eq(_index).show();
+			})
+		});
+</script>
+</html>

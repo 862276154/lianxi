@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+	<!--<div id="content" style="border: 1px red solid; width: 100px; height: 100px;">外层div
+		<br />
+		<span style="border: 1px purple solid; width: 100px; height: 20px; line-height: 20px; display: inline-block ; margin-top: 10px;">内层span</span>
+	</div>-->
+	
+	
+	<!--<form action="事件.html">
+		用户名：<input type="text" id="username" />
+		<br />
+		<input type="submit" value="提交" id="sub" />
+	</form>
+	<div id="msg"></div>-->
+	
+	<!--<a href="http://www.baidu.com">点击跳转</a>-->
+	
+<!--	<input type="text" />-->
+
+<button id="btn">点击</button>
+<div id="test"></div>
+<button id="delAll">删除所有 </button>
+<button id="delTwo">删除第二个 </button>
+	<script>
+		$(function(){
+//			//bind是绑定事件
+//			$('span').bind('click',function(){
+//				var txt = $('#msg').html()+"<p>内层span被点击</p>";
+//				$("#msg").html(txt);
+////				return false;//阻止事件冒泡
+//				event.stopPropagation();//阻止事件冒泡
+//			});
+//			$('#content').bind('click',function(){
+//				var txt = $('#msg').html()+"<p>外层div被点击</p>";
+//				$("#msg").html(txt);
+////				return false;//阻止事件冒泡
+//				event.stopPropagation();//阻止事件冒泡
+//			});
+//			$('body').bind('click',function(){
+//				var txt = $('#msg').html()+"<p>body被点击</p>";
+//				$("#msg").html(txt);
+////				return false;//阻止事件冒泡
+//				event.stopPropagation();//阻止事件冒泡
+//			}) ;
+			//阻止表单默认行为
+//			$(function(){
+//				$('#sub').bind('click',function(){
+//					var username = $('#username').val();//获取元素的值
+//					if(username == ''){
+//						$('#msg').html('<p>文本框不能为空</P>');
+//						event.preventDefault();//阻止表单默认行为
+//					}
+//				})
+//			})
+//			//获取事件类型
+//			$('a').click(function(event){
+//				alert(event.type);
+//				return false;//阻止a标签跳转
+//			});
+//			$('a[href="http://www.baidu.com"]').click(
+//				function(event){
+//					alert(event.target.href);//获取触发事件a元素的href值
+//					return false;//阻止跳转 
+//				}
+//			);
+		//获取鼠标当前相对于页面的坐标
+//		$(document).click(
+//			function(event){
+//			alert('当前鼠标坐标:'+event.pageX+','+event.pageY);
+//			return false;
+//		});
+//		//获取鼠标按键
+//		$(document).mousedown(function(e){
+//			alert(e.which);//1是左键 2是滚轮按下 3是右键
+//			return false;
+//		});
+		//获取键盘事件
+//		$('input').keyup(function(e){
+//			alert(e.which);
+//		});
+		//移除事件
+		$('#btn').bind('click',click1=function(){
+			$("#test").append('<p>绑定事件1</p>');
+		}).bind('click',click2=function(){
+			$("#test").append('<p>绑定事件2</p>');
+		}).bind('click',click3=function(){
+			$("#test").append('<p>绑定事件3</p>');
+		});
+		$('#delTwo').click(
+			function(){
+			$('#btn').unbind('click',click2);
+			$('p').remove();
+		})
+		})
+	</script>
+</body>
+</html>

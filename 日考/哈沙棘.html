@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+		<style>
+			*{
+		    margin: 0;padding:0;
+		    list-style:none;
+		    text-decoration:none;
+			}
+			.title{
+				width: 500px;
+				height: 80px;
+				line-height: 80px;
+				background: #000;
+				margin: 0 auto;
+				text-align: center;
+			}
+		
+		table{
+		width: 500px;
+		height: 350px;	
+		border: 1px solid #fff;
+		background: #000;
+		text-align: center;
+		margin: 0 auto;
+	}
+	table tr{
+		color: #fff;
+		font-size: 14px;
+		width: 450px;
+		height: 30px;
+		border: 1px solid #fff;
+	}
+	table tr td{
+		border: 1px solid #fff;
+		padding: 4px 10px;
+	}
+	p{
+		color: #fff;
+		text-align: center;
+		margin-top: 26px;
+		width: 468px;
+		height: 30px;
+		border: 1px solid #fff; 
+		margin: 0 auto;
+		line-height: 30px;
+	}
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			<select name="" id="box">
+		    </select>
+		    <select name="" id="box2">
+			</select>	
+			<button id="btn">点击查询</button>	
+		</div>
+		<table>
+			<tr>
+				<td colspan='6'>今日天气</td>
+			</tr>
+			<tr>
+				<td class="wendu"></td>
+				<td class="ganmao" colspan='5'></td>
+			</tr>
+			<tr>
+				<td class="address" colspan='6'>未来几日天气</td>
+			</tr>
+			<tr class="list">
+				<td>风向</td>
+				<td>风力</td>
+				<td>最高气温</td>
+				<td>天气</td>
+				<td>最低气温</td>
+				<td>日期</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	  <script>
+	  	function getData(){
+	  		$.ajax({
+	  		type:"get",
+	  		url:"json/city.json",
+	  		dataType:"json",
+	  		async:true,
+	  		success:function(data){
+              cityall=data.citylist;
+              $.each(cityall, function(item,items) {
+              	//console.log(items);
+              	$('.title #box').append("<option>"+items.p+"</option>");
+              })
+	  		}
+	  	})
+	  }
+	  getData();
+	  $('.title #box').change(function(){
+	  	$('.title #box2').children().remove();
+	  	var $val=$('.title #box :selected').val();
+	  	getData();	  	
+	  $.each(cityall,function(v,vl){
+				console.log(vl);
+				if(vl.p == $val){
+					var cityData = vl.c;
+					$.each(cityData,function(city,citys){
+						$('.title #box2').append('<option>'+citys.n+'</option>');
+					})
+				}
+			})
+	  })
+	  	
+	  	
+	  		  	
+	 $('.title #btn').click(function(){
+	 	var $city=$('#box2 :selected').val();
+	 	$.ajax({
+	 		type:"get",
+	 		url:"http://wthrcdn.etouch.cn/weather_mini?city="+$city,
+	 		async:true,
+	 		dataType:"jsonp",
+	 		success:function(msg){
+	 		var a = msg;
+					$('.list').nextAll().remove();
+					$.each(a,function(aa,aas){
+						console.log(aas);
+						$('.wendu').html(aas.wendu+'℃');
+						$('.ganmao').html(aas.ganmao);
+						var adres = aas.city+"未来几日天气";
+						$('.address').html(adres);
+						var weilai = aas.forecast;
+						//console.log(weilai);
+						$.each(weilai,function(i,is){
+							//console.log(is);
+							var $str = '';
+							$str = '<tr><td>'+is.fengxiang+'</td><td>'+is.fengli+'</td><td>'+is.high+'</td><td>'+is.type+'</td><td>'+is.low+'</td><td>'+is.date+'</td></tr>';
+							console.log($str);
+							$($str).insertAfter('.list');
+						})
+					})
+	 		}
+	 	});
+	 })
+	  	
+	  </script>
+	</body>
+</html>

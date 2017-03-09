@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		/*.box{
+			width: 200px;
+			height: 200px;
+			background-color: #f00;
+			border: 2px solid orange;
+		}
+		.action{
+			width: 30px;
+			height: 24px;
+		}*/
+	</style>
+	<body>
+		<div class="box">
+			<p class="block">Hello Javascript!</p>
+		</div>
+		
+		<!--<button id="left">«</button>-->
+		<button class="action">GO！</button>
+		<!--<button id="right">»</button>-->
+<div class="block"></div>
+	</body>
+	<script>
+		$('.action').click(function(){
+			$('.box').animate({
+				width:"90%",
+				height:"100%",
+				fontSize:"200px",
+//				borderWidth:10
+			});
+//			$("#right").click(function(){
+//$(".block").animate({left: '+50px'}, "slow");
+//});
+//
+//$("#left").click(function(){
+//$(".block").animate({left: '-50px'}, "slow");
+//});
+		});
+	</script>
+</html>

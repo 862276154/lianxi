@@ -1,0 +1,98 @@
+@import url("reset.css");
+.whb(@w,@h,@b){
+    width: @w;
+    height: @h;
+    background: @b;
+}
+.f(@f){
+    float: @f;
+}
+.a{
+    position: absolute;
+}
+.r{
+    position: relative;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient: @ver;
+}
+html,body{
+    .whb(100%,100%,none);
+}
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap{
+    .whb(100%,100%,none);
+    .box(vertical);
+    header{
+       .whb(100%,4.4rem,#ff614c); 
+       .r;
+       div:nth-child(1){
+           .whb(0.8rem,0.8rem,none);
+           .a;
+           top: 1.9rem;
+           left: 1rem;
+           border: 2px solid white;
+           border-top: none;
+           border-right: none;
+           transform: rotateZ(45deg);
+       }
+       h1{
+           -webkit-box-flex: 1;
+           text-align: center;
+           line-height: 4.4rem;
+           color: white;
+           font-size: 1.4rem;
+       }
+    }
+    section{
+        -webkit-box-flex: 1;
+        .box(vertical);
+        padding: 2.8rem 1rem 0;
+        &>div{
+            .whb(100%,3.4rem,none);
+            line-height: 3.4rem;
+            border: 1px solid #cccccc;
+            border-radius: 0.3rem;
+            margin-bottom: 1.5rem;
+            img{
+                background: red;
+                vertical-align: middle;
+                margin: 0 1.5rem;
+            }
+            &>input{
+                outline: none;
+                border: none;
+                font-size: 1.4rem;
+                //padding: 1.1rem 1rem;
+                //box-sizing: border-box;
+            }            
+        }
+        .first{
+            background: #ff614c;
+            color: white;
+            text-align: center;
+            margin-top: 1.3rem;
+            font-size: 1.5rem;
+        }
+        p{
+            padding-left: 0.6rem;
+            color: #CCCCCC;
+            span{
+                color: #ff614c;
+            }
+        }
+    }
+    @media screen and (min-width:375px) and (max-width:375px){
+        header{
+            background: purple;
+        }
+    }
+}

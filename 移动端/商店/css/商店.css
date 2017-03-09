@@ -1,0 +1,188 @@
+@import url("reset.css");
+.r {
+  position: relative;
+}
+.a {
+  position: absolute;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrapper header {
+  width: 100%;
+  height: 3.5rem;
+  background: #191b20;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: white;
+  line-height: 3.5rem;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+}
+.wrapper header img {
+  vertical-align: middle;
+}
+.wrapper header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.wrapper .all_s {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper .all_s .s_two {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper .all_s .s_two section {
+  overflow-y: auto;
+  -webkit-box-flex: 1;
+}
+.wrapper .all_s .s_two section::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper .all_s .s_two section .nav {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  width: 100%;
+  height: 5.1rem;
+  background: none;
+  border-bottom: 0.5rem solid #eeeced;
+  padding-top: 0.9rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper .all_s .s_two section .nav div:nth-child(1) {
+  margin-left: 1.2rem;
+  margin-top: 0.6rem;
+  color: #767878;
+  font-weight: bold;
+}
+.wrapper .all_s .s_two section .nav .inp {
+  -webkit-box-flex: 1;
+  padding: 0 1.5rem;
+}
+.wrapper .all_s .s_two section .nav .inp input {
+  width: 100%;
+  height: 2.5rem;
+  background: #eeeced;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  padding-left: 4.7rem;
+  box-sizing: border-box;
+}
+.wrapper .all_s .s_two section .nav .inp span {
+  position: absolute;
+  top: 1.4rem;
+  left: 5.6rem;
+}
+.wrapper .all_s .s_two section .banner {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  width: 100%;
+  height: 3.6rem;
+  background: none;
+  border-bottom: 2px solid #f7f7f7;
+}
+.wrapper .all_s .s_two section .banner > div {
+  background: url(../img/qqqqqq_03.jpg) no-repeat right center;
+  -webkit-box-flex: 1;
+  text-align: center;
+  padding-top: 1.2rem;
+}
+.wrapper .all_s .s_two section .banner > div span {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: none;
+  border: 1px solid black;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+  margin-left: 0.6rem;
+}
+.wrapper .all_s .s_two section .banner div:nth-child(3) {
+  background: none;
+}
+.wrapper .all_s .s_two section .main {
+  padding: 0 0.9rem;
+  box-sizing: border-box;
+  color: #d7dee3;
+}
+.wrapper .all_s .s_two section .main dl {
+  padding-top: 1rem;
+}
+.wrapper .all_s .s_two section .main dl dt {
+  float: left;
+  margin-right: 0.7rem;
+}
+.wrapper .all_s .s_two section .main dl dt img {
+  height: 6rem;
+}
+.wrapper .all_s .s_two section .main dl dd ul li:nth-child(1) {
+  font-size: 1.4rem;
+  color: #575757;
+  font-weight: bold;
+}
+.wrapper .all_s .s_two section .main dl dd ul li:nth-child(2) {
+  margin-top: 0.3rem;
+}
+.wrapper .all_s .s_two section .main dl dd ul li:nth-child(3) {
+  margin-top: 0.8rem;
+}
+.wrapper .all_s .s_two section .main dl dd ul li:nth-child(3) span {
+  margin-right: 1.3rem;
+}
+.wrapper .all_s .s_two section .main p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 0.2rem 0 1rem 0;
+}
+.wrapper footer {
+  width: 100%;
+  height: 4.3rem;
+  background: none;
+  border-top: 1px solid #e6e6e6;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-top: 0.8rem;
+  box-sizing: border-box;
+  color: #a3abaf;
+}
+.wrapper footer dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+}
+.wrapper footer dd {
+  line-height: 1.1rem;
+}
+.wrapper footer .hong {
+  color: #fa5b62;
+}

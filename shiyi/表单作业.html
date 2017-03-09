@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+	<style>
+		 body{
+        font: 12px/19px Arial;color: #666;/*12px指的是字体大小，19px指的是行高*/
+    }
+    form div{
+        margin: 5px 0;
+    }
+    .int label{
+        float: left;
+        width: 100px;
+        text-align: center;
+    }
+    .int input{
+        padding: 1px 1px;
+        border: 1px solid #ccc;
+        height: 16px;
+    }
+    .sub{
+        padding-left: 100px;
+    }
+    .sub input{
+        margin-right: 10px;
+    }
+    .high{
+        color: red;
+    }
+    .formtips{
+        width: 200px;margin: 2px;padding: 2px;
+    }
+    .onError{
+        color: red;
+    }
+    .onSuccess{
+        color: #66CD00;
+    }
+	</style>
+</head>
+<body>
+	
+	<form action="" method="post">
+    <div class="int">
+    <label for="username">用户名：</label>
+    <input type="text" id="username" class="required">
+</div>
+    <div class="int">
+        <label for="email">邮箱：</label>
+        <input type="text" id="email" class="required">
+    </div>
+    <div class="int">
+        <label for="personinfo">个人资料：</label>
+        <input type="text" id="personinfo">
+    </div>
+    <div class="sub">
+        <input type="reset" id="res" value="重置">
+        <input type="submit" id="send" value="提交">
+    </div>
+</form>
+
+<script>
+	$(function(){
+		//如果是必填，则加高亮显示在后面
+		var $str =$("<strong class='high'>*</strong>");
+		$('input.required').focus(function(){
+			
+		});
+		//文本框失去焦点
+		$('form :input').blur(function(){
+			var $parent = $(this).parent();
+			$('.formtips').remove();
+			if($(this).is('#username')){//判断用户名的input是否存在
+				if(this.value==''||this.value.length<6){
+					var errorMsg = '×请输入至少6位的用户名';
+					$parent.append('<span class="formtips onError">'+'<strong class="high">*</strong>'+errorMsg+'</span>');
+				}
+				else{
+					var okMsg = '√输入正确';
+					$parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+				}
+			}
+			if($(this).is('#email')){//判断邮箱的input是否存在
+				if(this.value==''||(this.value!=''&&!/^\w+@\w+(\.)\w+$/.test(this.value))){				
+					var errorMsg = '×请输入正确的邮箱格式';
+					$parent.append('<span class="formtips onError">'+'<strong class="high">*</strong>'+errorMsg+'</span>');
+				}
+				else{
+					var okMsg = '√输入正确';
+					$parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+				}
+			}
+		}).keyup(function(){
+			$(this).triggerHandler('blur');//triggerHandler：触发指定的事件类型上所有绑定的处理函数。但不会执行浏览器默认动作，也不会产生事件冒泡。
+			//区别于trigger：在每一个匹配的元素上触发某类事件。会执行浏览器默认动作。
+		}).focus(function(){
+			$(this).triggerHandler('blur');
+		});
+		$('#res').click(function(){
+			$('.formtips').remove();
+		})
+		})
+</script>
+</body>
+</html>

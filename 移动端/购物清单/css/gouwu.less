@@ -1,0 +1,182 @@
+@import url("reset.css");
+.whb(@w,@h,@b){
+    width: @w;
+    height: @h;
+    background: @b;
+}
+.f(@f){
+    float: @f;
+}
+.a{
+    position: absolute;
+}
+.r{
+    position: relative;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient: @ver;
+}
+html,body{
+    .whb(100%,100%,none);
+}
+html{
+    font-size: 0.625;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap{
+    .whb(100%,100%,none);
+    .box(vertical);
+    header{
+       .whb(100%,3.7rem,#1b1b20); 
+       color: white;
+           font-size: 1.6rem;
+       .box(horizontal);
+           line-height: 3.7rem;
+       &>div{
+           padding: 0 1rem;
+           img{
+               vertical-align: middle;
+               margin-top: -0.2rem;
+           }
+           span{
+               margin-left: 0.4rem;
+           }
+       }
+       h1{
+           -webkit-box-flex: 1;
+           text-align: center;
+       }
+    }
+    section{
+        -webkit-box-flex: 1;
+        overflow: auto;
+        .banner{
+        padding: 1.4rem 0;
+        .box(horizontal);
+        color: #f75b6a;
+        border-bottom: 0.6rem solid #e1e1e1;
+        .r;
+            &>div{
+                padding: 0 0.9rem;
+                font-size: 1.4rem;
+                margin-top: 0.4rem;
+            }
+            &>input{
+            display: block;
+                -webkit-box-flex: 1;
+            margin: 0 0.5rem;
+                .whb(100%,2.5rem,#f1f5f8);
+                outline: none;
+                border: none;
+                border-radius: 2rem;
+                text-align: center;
+            }
+                 input::-webkit-input-placeholder{
+                 color: #f75b6a;
+                 }
+            .ding{
+                .a;
+                top: 2rem;
+                left: 12rem;
+            }
+        }
+        .main{
+        padding: 0 0.8rem;
+        border-bottom: 0.5rem solid #e1e1e1;
+            dl{
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e5eb;
+            dt{
+                .f(left);
+                margin-right: 0.9rem;  
+                img{
+                    .whb(auto,6rem,none);
+                }             
+            }
+                h2{
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+                p{
+                     font-size: 1rem;
+                     color: #bcbcbc;
+                }
+                h3{
+                    margin-top: 1.5rem;   
+                    font-size: 1.2rem;    
+                    color: #6db4ff; 
+                    #tupian{
+                        margin-left: 0.5rem; 
+                        vertical-align: middle;                    
+                    }           
+                }
+            }
+            &>div{
+                padding: 0.9rem 0;
+            }
+            .main_one{
+                .f(left);
+                p{
+                    color: #213041;
+                    span{
+                        color: #f53144;
+                    }
+                    font{
+                        color: white;
+                        background: #65c338;
+                        padding: 0.3rem 1rem;
+                        border-radius: 0.7rem;  
+                        margin-right: 0.4rem;                      
+                    }
+                }
+                .lia{
+                    margin-top: 0.8rem;
+                }
+                    b{
+                        font-size: 1.6rem;
+                        margin: 0 0.5rem;
+                    }
+            }
+            .daimai{
+            .f(right);
+            .whb(5rem,2.6rem,#ff5a64);
+                color: white;
+                margin-top: 1.3rem;
+                line-height: 2.6rem;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                img{
+                    vertical-align: middle;
+                    margin-right: 0.4rem;
+                }
+            }
+        }
+    }
+    footer{
+        .whb(100%,4.4rem,none); 
+        border-top: 1px solid #ccc;
+        .box(horizontal);
+        color: #979ea6;
+        dl{
+            .whb(20%,auto,none);
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .hong{
+            color: #ffb6ba;
+        }
+        .re{
+            .r;
+        }
+        .ab{
+            .a;
+              top: -1rem;
+            right: 1rem;
+        }
+    }
+}

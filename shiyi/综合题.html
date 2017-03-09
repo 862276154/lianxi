@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>	
+	
+	<script>
+	//作用域（ES5之前）：1.全局作用域window  2.私有作用域Function
+	//区分函数私有作用域里的变量是不是私有变量 1.看有没有形参，有形参就是私有变量
+	//this是谁：1.自执行函数的this全部都是指向window 2.
+		 var number = 2; 		 
+   		var obj = {
+        number: 4,
+        fn1: (function (number) {
+            this.number *= 2;
+            number = number * 2;
+            console.log(number);     
+      		 var number = 3;           
+ 		return function () {
+                this.number *= 2;
+                console.log(this);
+                number *= 3;
+                console.log(number);
+            }
+        })(number)
+    };
+    var fn1 = obj.fn1;
+        fn1();    
+obj.fn1();    
+console.log(window.number);
+    console.log(obj.number);
+	</script>
+</body>
+</html>

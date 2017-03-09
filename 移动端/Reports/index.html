@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/Reports.css"/>
+    <script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div><img src="img/can_03.jpg"/></div>
+			<h1>Reports</h1>
+			<div><img src="img/can_05.jpg"/></div>
+		</header>
+		<section>
+			<h2>Donut Chart</h2>
+			<div class="ss">
+				<canvas id="can" width="170" height="170"></canvas>
+				<h4></h4>
+			<div>
+				<p><img src="img/can_10.jpg"/>Art(20%)</p>
+				<p><img src="img/can_13.jpg"/>Occult(10%)</p>
+				<p><img src="img/can_16.jpg"/>Literaly(20%)</p>
+				<p><img src="img/can_18.jpg"/>Occult(10%)</p>
+				<p><img src="img/can_21.jpg"/>Classic(10%)</p>
+				<p><img src="img/can_23.jpg"/>Historical(30%)</p>
+			</div>
+			</div>
+			<h2>Pic Chart</h2>
+			<div class="s_second">
+				<canvas id="canv" width="170" height="170"></canvas>
+				<h4></h4>
+				<div>
+					<p><img src="img/can_26.jpg"/>Art</p>
+					<p><img src="img/can_28.jpg"/>Historical</p>
+					<p><img src="img/can_30.jpg"/>Occult</p>
+					<p><img src="img/can_32.jpg"/>Classic</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+<script>
+	var can=document.getElementById('can');
+	var cvs=can.getContext('2d');
+	
+	var arr=[0.2,0.1,0.2,0.1,0.1,0.3];
+	var arr_color=['#e85b52','#bf4836','#90c2db','#fdbc21','#7fb582','#f54500'];
+	var str=0,end=0;
+	for(var i=0;i<arr.length;i++){
+		end+=2*Math.PI*arr[i];
+		cvs.beginPath();
+		cvs.moveTo(85,85);
+		cvs.fillStyle=arr_color[i];
+		//x y 半径 起始点  圆周率 顺时针
+		cvs.arc(85,85,85,str,end);
+		cvs.fill();
+		str=end;
+		cvs.closePath();		
+	}
+	
+	//小白圆
+	cvs.beginPath();
+	cvs.moveTo(85,85);
+	//x y 半径 起始点  圆周率 顺时针
+	cvs.arc(85,85,42,0,Math.PI*2,false);
+	cvs.fillStyle='white';
+	cvs.fill();
+	cvs.closePath();
+	cvs.beginPath();
+	cvs.fillStyle='#8f8f8f';
+	//字体大小  字体样式
+	cvs.font="24px 微软雅黑";
+	//内容 x y 
+	cvs.fillText(6,76,90);
+	
+	cvs.fillStyle='#8f8f8f';
+	cvs.font="12px 微软雅黑";
+	cvs.fillText('categories',55,105);
+	cvs.fill();
+	cvs.closePath();
+	//第二个圆
+	var canv=document.getElementById('canv');
+	var cans=canv.getContext('2d');
+	
+	var arr2=[0.5,0.25,0.125,0.125];
+	var arr_color2=['#ef4723','#f05155','#72bd82','#fdc70f'];
+	var str2=0,end2=0;
+	
+	for(var j=0;j<arr2.length;j++){
+		end2+=2*Math.PI*arr2[j];
+		cans.beginPath();
+		cans.moveTo(85,85);
+		cans.fillStyle=arr_color2[j];
+		//x y 半径 起始点  圆周率 顺时针
+		cans.arc(85,85,85,str2,end2);
+		cans.fill();
+		str2=end2;
+		cans.closePath();		
+	}
+</script>
+</html>

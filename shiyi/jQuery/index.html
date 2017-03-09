@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		jquery的选择器：
+		<!--<div id="box" class="box1" value='1'>死亡如风，常伴吾身</div>-->
+		<div>div:
+			<p>p: <br /><span>1</span><br /><span>2</span><br /><span>3</span></p>
+		</div>
+		<input type="text" name="put1" value="0"/>
+		<input type="text" name="put2" value="1"/>
+		<input type="text" name="put3" value="2"/>
+	</body>
+	<script>
+		$(document).ready(function(){
+////			$('div').html('死亡而已，没什么大不了的');
+//			$('#box').html('死亡而已，没什么大不了的');
+//			$('#box').css({background:'red',width:200,height:200,fontSize:30,color:'yellow'});
+//			$('.box1').text('你在我的王国里');
+//			$('.box1').val('还有谁');
+//			console.log($('.box1').val());
+//			$('div p').html('p');
+			$('div p span:first').html('一');
+//			try{
+//				$('div p span:').html('一');
+//			}
+//			catch{
+//				
+//			}//处理异常
+//			$('div p span').eq(1).html('俩');
+//			$('div p span:last').html('san');
+			$("input[name='put2']").val('请输入数字');
+
+		})
+	</script>
+</html>

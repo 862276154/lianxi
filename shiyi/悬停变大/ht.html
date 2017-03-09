@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.1.1.js"></script>
+	<style>
+	*{
+		margin: 0;padding: 0;list-style: none;
+	}	
+	ul{
+		margin-top: 100px;
+		margin-left: 100px;
+	}
+	li{
+		float: left;
+		margin-right: 50px;		
+	}
+	#box{
+		margin-left: 100px;
+	}
+	#newDiv{
+		position: absolute;
+		border: 1px #ccc solid;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+			<ul>
+				<li>
+					<a href="../zoom/img/apple_1_bigger.jpg" title="apple" class="tooltip">
+						<img src="../zoom/img/apple_1.jpg" alt="apple"/>
+					</a>
+				</li>
+				<li>
+					<a href="../zoom/img/apple_2_bigger.jpg" title="apple" class="tooltip">
+						<img src="../zoom/img/apple_2.jpg" alt="apple"/>
+					</a>
+				</li>
+				<li>
+					<a href="../zoom/img/apple_3_bigger.jpg" title="apple" class="tooltip">
+						<img src="../zoom/img/apple_3.jpg" alt="apple"/>
+					</a>
+				</li>
+				<li>
+					<a href="../zoom/img/apple_4_bigger.jpg" title="apple" class="tooltip">
+						<img src="../zoom/img/apple_4.jpg" alt="apple"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script>
+			var x = 40;
+			var y = 40;
+			//e监听事件
+			//tooltip：提示的意思
+			//mouseover：当鼠标指针位于元素上方时，会发生 mouseover 事件。
+			//该事件大多数时候会与 mouseout 事件一起使用。
+			$('a.tooltip').mouseover(function(e){
+				this.myTitle = this.title;
+				this.title = '';
+				//得到大图的路径
+				var newDiv = "<div id='newDiv'><a><img src='"+this.href+"'></a></div>";
+//				console.log(newDiv)
+				//把div追加到文档
+				$('body').append(newDiv);
+				//设置坐标
+				$('#newDiv').css({
+					'top':(e.pageY+y)+'px',
+					'left':(e.pageX+x)+'px'
+				}).show();
+			}).mouseout(function(){
+				 this.title=this.myTitle ;
+				 $('#newDiv').remove();
+			}).mousemove(function(e){
+				$('#newDiv').css({
+					'top':(e.pageY+y)+'px',
+					'left':(e.pageX+x)+'px'
+				});
+			});
+		</script>
+</body>
+</html>

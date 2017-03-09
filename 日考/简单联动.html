@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<select name="" id="">
+			<option value="">请选择省/直辖市</option>
+		</select>
+		<select name="" id="">
+			<option value="">请选择市/区</option>
+		</select>
+		<select name="" id="">
+			<option value="">请选择区/县</option>
+		</select>
+	</body>
+</html>
+<script>
+	$(function(){
+		var area;
+		$.ajax({
+			type:"get",
+			url:"a.txt",
+			data:{},
+			dataType:"json",
+			async:false,
+			success:function(data){
+				area=data;
+				$.each(area.p,function(i,val){
+					$("select:first").append("<option value="+val+">"+val+"</option>");
+				})	
+			}
+		})
+		$("select").change(function(){
+			var _value=$(this).val();
+			$(this).nextAll("select").find("option:first").nextAll("option").remove();
+			var obj=$(this);
+			$.each(area.c,function(_i,_val){
+				if(_i==_value){
+					$.each(_val,function(__i,__val){
+						obj.next("select").append("<option value="+_value+"-"+__val+">"+__val+"</option>");
+					})	
+				}
+			})
+			$.each(area.a,function(_i,_val){
+				if(_i==_value){
+					$.each(_val,function(__i,__val){
+						obj.next("select").append("<option value="+_value+"-"+__val+">"+__val+"</option>");
+					})	
+				}
+			})
+		})
+	})
+</script>

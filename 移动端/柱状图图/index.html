@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<script src="js/jquery-3.1.1.js"></script>-->
+	</head>
+	<body>
+		<canvas id="canv" width="600" height="600" style="background: greenyellow;"></canvas>
+	</body>
+</html>
+<script>
+	var canv = document.getElementById('canv');
+		var can = canv.getContext('2d');
+		var arr = ['vueJs','reactJs','angularJs','bootstrap','html5/css3','ajax','jquery','JavaScript','html/css'];
+		can.beginPath();
+		can.translate(50,50);//重新定义起点位置
+		can.moveTo(0,0);
+		can.lineTo(0,450);
+		can.lineTo(450,450);
+		for(i=0;i<arr.length+1;i++){
+			can.moveTo(0,50*i);
+			can.lineTo(10,50*i);
+			can.fillText(arr[i],-30,50*i+50);
+		}
+		
+		can.stroke();
+		can.closePath();
+//		can.beginPath();
+//		can.moveTo(50,50);
+//		can.lineTo(50,500);
+//		can.lineTo(500,500);
+//		can.stroke();
+//		can.closePath();
+//		
+//		for(i=0;i<arr.length+1;i++){
+//			can.beginPath();
+//			can.moveTo(50,50*i);
+//			can.lineTo(60,50*i);
+//			can.stroke();
+//			can.closePath();
+//		}
+//		
+//		can.beginPath();
+//		can.moveTo(50,100);
+//		can.lineTo(60,100);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,150);
+//		can.lineTo(60,150);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,200);
+//		can.lineTo(60,200);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,250);
+//		can.lineTo(60,250);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,300);
+//		can.lineTo(60,300);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,350);
+//		can.lineTo(60,350);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,400);
+//		can.lineTo(60,400);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,450);
+//		can.lineTo(60,450);
+//		can.stroke();
+//		can.closePath();
+//		
+//		can.beginPath();
+//		can.moveTo(50,500);
+//		can.lineTo(60,500);
+//		can.stroke();
+//		can.closePath();
+		
+		//y
+//		can.beginPath();
+//		can.moveTo(100,490);
+//		can.lineTo(100,500);
+//		can.stroke();
+//		can.closePath();
+//		
+		
+</script>
+</script>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.myDiv{
+		margin: 0 auto;
+		width: 80px;
+		height: 40px;
+		line-height: 40px;
+		color: #fff;
+		background-color: orange;
+		cursor: pointer;
+		
+	}
+	.tianjia{
+		margin: 0 auto;
+		width: 500px;
+		height: 30px;
+		line-height: 30px;
+	}
+	.tianjia button{
+		float: right;
+		width: 50px;
+		line-height: 24px;
+		color: #fff;
+		background-color: #AAAAAA;
+	}
+</style>
+<body>
+	<div class="myDiv">
+		加加加+++
+	</div>
+	<ol></ol>
+</body>
+<script type="text/javascript">
+	$(function(){
+		var suijise = ['000000000','111111111','222222222','333333333'];
+		$('.myDiv').click(function(){			
+			var $li = $('<li class="tianjia">1,'+suijise[Math.floor(Math.random()*suijise.length)]+'----'+Math.floor(Math.random()*100)+'<button>---</button>');
+			$('ol').append($li);
+			$('li').css({
+				background:function(){
+					return '#'+Math.floor(Math.random()*Math.pow(16,6)-1).toString(16);
+				}
+			});
+			$('button').click(function(){
+				$(this).parent('li').remove();
+			})
+		})
+	})
+</script>
+</html>

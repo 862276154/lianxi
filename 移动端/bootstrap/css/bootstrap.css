@@ -1,0 +1,21 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}

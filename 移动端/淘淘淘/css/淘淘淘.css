@@ -1,0 +1,281 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 0.625;
+}
+.wrapper {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrapper .all_w {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  overflow: hidden;
+}
+.wrapper .all_w .w_one {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper .all_w .w_one header {
+  width: 100%;
+  height: 4.3rem;
+  background: #fe4f00;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: white;
+  padding: 0.3rem 1.5rem 0;
+  box-sizing: border-box;
+}
+.wrapper .all_w .w_one header > div {
+  -webkit-box-flex: 1;
+  padding: 0 2rem;
+  line-height: 4.3rem;
+}
+.wrapper .all_w .w_one header > div input {
+  width: 100%;
+  height: 2rem;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  padding-left: 2.2rem;
+  box-sizing: border-box;
+}
+.wrapper .all_w .w_one header > div input::-webkit-input-placeholder {
+  color: white;
+}
+.wrapper .all_w .w_one header > div .one {
+  position: absolute;
+  left: 6.6rem;
+  top: 1.7rem;
+}
+.wrapper .all_w .w_one header > div .two {
+  position: absolute;
+  right: 6.6rem;
+  top: 1.7rem;
+}
+.wrapper .all_w .w_one header > dl {
+  text-align: center;
+}
+.wrapper .all_w .w_one header > dl img {
+  height: 2.2rem;
+}
+.wrapper .all_w .w_one header > dl dd {
+  line-height: 1rem;
+}
+.wrapper .all_w .w_one section {
+  -webkit-box-flex: 1;
+  overflow: auto;
+}
+.wrapper .all_w .w_one section::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper .all_w .w_one section .banner {
+  width: 100%;
+  height: 10rem;
+  background: none;
+}
+.wrapper .all_w .w_one section .banner img {
+  width: 100%;
+  height: 10rem;
+  background: none;
+}
+.wrapper .all_w .w_one section .nav {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #ababab;
+}
+.wrapper .all_w .w_one section .nav dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+  width: 0;
+  margin-top: 0.8rem;
+}
+.wrapper .all_w .w_one section .nav dl dd {
+  line-height: 0.8rem;
+}
+.wrapper .all_w .w_one section .tao {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  margin-top: 1.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 5px solid #ececec;
+}
+.wrapper .all_w .w_one section .tao div:nth-child(1) {
+  padding: 0 1.6rem;
+  border-right: 2px solid #f1f1f1;
+}
+.wrapper .all_w .w_one section .tao div:nth-child(1) img {
+  height: 3.9rem;
+}
+.wrapper .all_w .w_one section .tao div:nth-child(2) {
+  -webkit-box-flex: 1;
+  margin-left: 0.7rem;
+}
+.wrapper .all_w .w_one section .tao div:nth-child(2) p {
+  margin-top: 0.5rem;
+  color: #353535;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrapper .all_w .w_one section .tao div:nth-child(2) p span {
+  color: #dc847e;
+  border: 1px solid #dc847e;
+  border-radius: 0.3rem;
+  padding: 0 0.2rem;
+  margin-right: 0.5rem;
+}
+.wrapper .all_w .w_one section .kele {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding: 0.8rem 1rem 1.1rem;
+  box-sizing: border-box;
+  border-bottom: 5px solid #f4f4f4;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(1) {
+  padding-right: 0.8rem;
+  border-right: 1px solid #f1f1f1;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(1) img {
+  width: 6.5rem;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(2) {
+  -webkit-box-flex: 1;
+  width: 100%;
+  height: auto;
+  background: none;
+  padding: 0 0.5rem;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(2) p:nth-child(1) {
+  font-size: 1.6rem;
+  color: #d51e00;
+  font-weight: bold;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(2) p:nth-child(2) {
+  color: #bababa;
+  margin-top: 1rem;
+  -webkit-transform-origin: 0;
+  -webkit-transform: scale(0.9);
+  font-size: 8px;
+}
+.wrapper .all_w .w_one section .kele div:nth-child(2) p:nth-child(3) img {
+  width: 9rem;
+  height: 5rem;
+}
+.wrapper .all_w .w_one section .qiang {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  margin-top: 0.9rem;
+}
+.wrapper .all_w .w_one section .qiang > div {
+  -webkit-box-flex: 1;
+  text-align: center;
+}
+.wrapper .all_w .w_two {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper .all_w .w_two header {
+  width: 100%;
+  height: 4rem;
+  background: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  line-height: 4rem;
+  position: relative;
+}
+.wrapper .all_w .w_two header img {
+  vertical-align: middle;
+}
+.wrapper .all_w .w_two header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: #767a79;
+  font-size: 1.4rem;
+}
+.wrapper .all_w .w_two header div:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+.wrapper .all_w .w_two header .weiwei {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+.wrapper .all_w .w_two header .weiwei .tuer {
+  margin-left: 2.2rem;
+}
+.wrapper .all_w .w_two section {
+  -webkit-box-flex: 1;
+}
+.wrapper .all_w .w_two section .nav {
+  width: 100%;
+  height: 4.8rem;
+  background: #f8f8f8;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-top: 0.6rem;
+  box-sizing: border-box;
+  color: #9a9a9a;
+}
+.wrapper .all_w .w_two section .nav dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+}
+.wrapper .all_w .w_two section .nav dl dd {
+  line-height: 1.3rem;
+}
+.wrapper .all_w .w_two section .nav .n_first {
+  color: #e57336;
+}
+.wrapper footer {
+  width: 100%;
+  height: 4rem;
+  background: none;
+  border-top: 1px solid #ececec;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-top: 0.4rem;
+  box-sizing: border-box;
+  color: #ABABAB;
+}
+.wrapper footer dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+  width: 0;
+}
+.wrapper footer dd {
+  line-height: 1.2rem;
+}
+.wrapper footer .bian {
+  color: #ee9c6c;
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.myDiv{
+		width: 500px;
+		height: 400px;
+		margin: 30px auto;
+	}
+	tr{
+		text-align: center;
+		line-height: 30px;
+		border-bottom: 1px solid #ccc;
+	}
+	span{
+		display: block;
+		width: 80px;
+		height: 30px;
+		background: linear-gradient(to top,green,#ccc);
+		text-align: center;
+		line-height: 30px;
+		color: #fff;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	thead{
+		background: #aef;
+	}
+</style>
+<body>
+	<div class="myDiv">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<thead>
+				<th></th>
+				<th>序号</th>
+				<th>标准对比作业</th>
+				<th>对比作业</th>
+				<th>相似度</th>
+				<th>操作</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="radio" /></td>
+					<td>1</td>
+					<td>对比作业/对比作业2</td>
+					<td>
+						<ul>
+							<li>作业1</li>
+							<li>作业2</li>
+							<li>作业3</li>
+							<li>作业4</li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li>90</li>
+							<li>80</li>
+							<li>90</li>
+							<li>60</li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="radio" /></td>
+					<td>1</td>
+					<td>对比作业/对比作业2</td>
+					<td>
+						<ul>
+							<li>作业1</li>
+							<li>作业2</li>
+							<li>作业3</li>
+							<li>作业4</li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li>90</li>
+							<li>80</li>
+							<li>90</li>
+							<li>60</li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+							<li><span>移除</span></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			
+		</table>
+	</div>
+</body>
+</html>

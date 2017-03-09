@@ -1,0 +1,251 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 0.625;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrapper header {
+  width: 100%;
+  height: 3.6rem;
+  background: #45c8a6;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-top: 1.8rem;
+  line-height: 3.6rem;
+}
+.wrapper header > div {
+  padding: 0 1.2rem;
+}
+.wrapper header > div img {
+  vertical-align: middle;
+}
+.wrapper header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: white;
+}
+.wrapper section {
+  -webkit-box-flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.wrapper section::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper section .s_one {
+  width: 100%;
+  height: 3rem;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper section .s_one ul {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-flex: 1;
+}
+.wrapper section .s_one ul li {
+  height: 3rem;
+  -webkit-box-flex: 1;
+  text-align: center;
+  line-height: 3rem;
+  border-bottom: 2px solid #f6f6f6;
+}
+.wrapper section .s_one ul .s_one_first {
+  border-bottom: 2px solid #83dac4;
+  color: #83dac4;
+}
+.wrapper section .s_one p {
+  width: 3.8rem;
+  height: 3rem;
+  background: none;
+  line-height: 3rem;
+  text-align: center;
+  border-bottom: 2px solid #f6f6f6;
+}
+.wrapper section .main {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper section .main .m_box {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  padding: 1.3rem;
+  box-sizing: border-box;
+}
+.wrapper section .main .m_box .hezi {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  overflow-x: hidden;
+}
+.wrapper section .main .m_box .hezi .m_one {
+  width: 100%;
+  height: 28.8rem;
+  background: #f0f0f0;
+  overflow: auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.8rem #dceae7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper section .main .m_box .hezi .m_one::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 0.4rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m .m_one_yi img {
+  margin-top: 0.5rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m > div {
+  -webkit-box-flex: 1;
+  margin-top: 1rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m > div img {
+  vertical-align: top;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m > div p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m > div p span {
+  color: #35d3bf;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m > div p img {
+  margin-left: 0.6rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_m font {
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-right: 0.6rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main {
+  width: 100%;
+  height: 20.6rem;
+  background: #ffffff;
+  margin-top: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .m_main_left {
+  width: 50%;
+  height: 20.6rem;
+  background: #ffffff;
+  border-right: 2px solid #f0f0f0;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .m_main_left p {
+  text-align: center;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .m_main_left .bushu {
+  height: 3.4rem;
+  line-height: 3.4rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .m_main_left .bu {
+  margin-top: 6.8rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .m_main_left .bu span {
+  font-size: 1.6rem;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .xinlv {
+  width: 50%;
+  height: 20.6rem;
+  background: #ffffff;
+  border-right: 2px solid #f0f0f0;
+  color: #858585;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .xinlv p {
+  height: 3.3rem;
+  line-height: 3.3rem;
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .shuimian {
+  width: 50%;
+  height: 20.6rem;
+  background: #ffffff;
+  border-right: 2px solid #f0f0f0;
+  color: #858585;
+}
+.wrapper section .main .m_box .hezi .m_one .m_main .shuimian p {
+  height: 5.1rem;
+  line-height: 5.1rem;
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+}
+.wrapper section .main .m_box .m_two {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  margin-top: 2.5rem;
+}
+.wrapper section .main .m_box .m_two dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+.wrapper section .main .m_box .m_two dl img {
+  width: auto;
+  height: 2.9rem;
+  background: none;
+}
+.wrapper section .main .m_box .m_two dl dd {
+  margin-top: 0.5rem;
+}
+.wrapper section .main .m_box .m_two .bg_first {
+  background: #36d3c0;
+  color: white;
+}
+.wrapper footer {
+  width: 100%;
+  height: 3.8rem;
+  background: #45c8a6;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper footer > div {
+  -webkit-box-flex: 1;
+  line-height: 3.8rem;
+  text-align: center;
+  color: white;
+}
+.wrapper footer > div img {
+  vertical-align: middle;
+  margin-right: 0.8rem;
+}
+.wrapper footer .f_first {
+  border-right: 2px solid #8bddc7;
+}

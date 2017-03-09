@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+<style>
+		body,html{
+			height: 1000%;
+			background: green;
+			background: -webkit-linear-gradient(top,lightsalmon,lightgoldenrodyellow,lightslategray);	
+	}
+	*{
+		margin: 0; padding: 0;
+	}
+	div{
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		line-height: 80px;
+		font-size: 18px;
+		font-weight: bold;
+		border-radius: 50px;
+		background: #FFFFFF;
+		box-shadow: 4px 4px 10px darkgreen;
+		position: fixed;
+		bottom: 50px;
+		right: 20px;
+		display: ;
+			}
+</style>
+</head>
+<body>
+	<div>回到顶部</div>
+	<script>
+		$(function(){
+			var $win = $(window);
+			var timer = null;
+			var isOK = false;
+			$(window).on('scroll',function(){
+				if(isOK){
+					
+				}
+				else{
+					isOK=true;
+					if($win.scrollTop()>$win.height()){
+						$('div').show()
+					}
+					else{
+						$('div').show()	
+					}
+				}
+			})
+			$('div').click(function(){
+				var $target = $win.scrollTop();
+				var duration = 1000;
+				var interval = 30;
+				var step = $target/duration*interval;
+				timer = setInterval(function(){
+					$target-=step;
+				},interval)
+			})
+		})
+	</script>
+</body>
+</html>

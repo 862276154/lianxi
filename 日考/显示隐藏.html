@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<style>
+    *{margin: 0;padding: 0;list-style: none}
+	body{
+		font-size: 12px;
+		text-align: center;
+	}
+	a{
+		color: #04D;
+		text-decoration: none;
+	}
+	a:hover{
+		color: purple;
+		text-decoration: underline;
+	}
+	.box{
+		width: 600px;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 50px;		
+	}
+	.box ul li{
+		display: block;
+		float: left;
+		width: 200px;
+		line-height: 25px;
+	}
+	.box2{
+		clear: both;
+		text-align: center;
+		padding-top: 10px;
+		
+	}
+	.box2 a{
+		display: block;
+		width: 120px;
+		margin: 0 auto;
+		line-height: 24px;
+		border: 1px solid #aaa;
+	}
+	.promoted a{
+		color: #FF5500;
+	}
+</style>
+<body>
+<div class="box">
+	<ul>
+	    <li><a href="#">小米</a><i>1</i></li>
+	    <li><a href="#">bom三星</a><i>2</i></li>
+	    <li><a href="#">苹果</a><i>3</i></li>
+	    <li><a href="#">大米</a><i>4</i></li>
+	    <li><a href="#">黑米</a><i>5</i></li>
+	    <li><a href="#">土豆</a><i>6</i></li>
+		<li><a href="#">黄豆</a><i>7</i></li>
+		<li><a href="#">绿豆</a><i>8</i></li>
+		<li><a href="#">荠菜</a><i>9</i></li>
+		<li><a href="#">黑莓</a><i>10</i></li>
+		<li><a href="#">多普达</a><i>11</i></li>
+		<li><a href="#">坚果</a><i>12</i></li>
+		<li><a href="#">华为</a><i>13</i></li>
+		<li><a href="#">油条</a><i>14</i></li>
+		<li><a href="#">其他吃的</a><i>0</i></li>
+	</ul>
+	<div class="box2">
+		<a href="#"><span>显示全部</span></a>
+	</div>
+</div>
+<script>
+		$(function(){
+			var $category = $('ul li:gt(5):not(:last)');
+			$category.hide();
+//			console.log(category)
+			var $toggleBtn = $('div .box2>a');
+//			console.log(toggleBtn)
+			$toggleBtn.click(function(){
+				if($category.is(':visible')){
+					$category.hide();
+					$(this).find('span').text('全部');
+				}
+				else{
+					$category.show();
+					$(this).find('span').text('精简');
+				}
+			})
+//			return false;
+		});
+//		$(function(){
+//			//category 种类,类别,范畴
+//			var $category = $('ul li:gt(5):not(:last)'); //拿到需要隐藏的菜单
+//			$category.hide();
+//			//toggle：用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。
+//			//如果元素是可见的，切换为隐藏的；如果元素是隐藏的，切换为可见的。
+//			var $toggleBtn = $('div .box2>a');  //拿到按钮a的标签
+//			$toggleBtn.click(function(){
+//				if($category.is(':visible')){
+//					$category.hide();
+//					//find：搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
+//					$(this).find('span').text('显示全部品牌');
+//					//removeClass：从所有匹配的元素中删除全部或者指定的类。
+//					$('ul li').removeClass('promoted');
+//				}
+//				else{
+//					$category.show();
+//					$(this).find('span').text('精简品牌');
+//					//filter：筛选出与指定表达式匹配的元素集合。
+//					//addClass：为每个匹配的元素添加指定的类名。
+//					$('ul li').filter(":contains('华为'),:contains('油条')").addClass('promoted');
+//				}
+//				return false; //禁止a链接跳转
+//			})
+//		})
+	</script>
+
+</body>
+<html>

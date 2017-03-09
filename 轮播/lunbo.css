@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+body{
+	margin: 50px;
+}
+.wrap{
+	width: 200px;
+	height: 200px;
+	border: 3px solid #f00;
+	position: relative;
+	overflow: hidden;
+}
+.wrap ul{
+	width: 800px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.wrap ul li{
+	float: left;
+	width: 200px;
+}
+.wrap ol{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.wrap ol li{
+	float: left;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	text-align: center;
+	border:1px solid #0f0;
+	background: #fff;
+	color: #000;
+	margin-right: 3px;
+	/*鼠标放上去手型*/
+	cursor: pointer;
+}
+.wrap ol li.moren{
+	background: deeppink;
+	color: #000000;
+}
+.wrap .introduce{
+	height: 15px;
+	line-height: 15px;
+	width: 100px;
+	/*rgba：每个字母分别对应 红，绿，蓝，透明度*/
+	background: rgba(0,0,0,0.5);
+	color: #FFFFFF;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	/*不透明度*/
+	/*opacity: 0.5;*/
+}

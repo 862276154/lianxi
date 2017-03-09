@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    margin: 20px auto;
+    width: 1200px;
+    height: 600px;
+    border: 2px solid #ccc;
+}
+img{
+    width: 250px;
+    height: 180px;
+}
+.box{
+    margin: 80px 20px;
+    width: 250px;
+    height: 180px;
+    position: relative;
+    float: left;
+    &>img{
+        position: absolute;
+    }
+}
+.yi{
+    .one{
+        animation: donghua 1s linear;
+    }
+//   .two{
+//      transform: rotate(20deg);
+//  }
+     .three{
+        animation: donghua2 1s linear;
+    }
+    @keyframes donghua{
+        form{
+           transform: rotate(0deg); 
+        }
+        to{
+             transform: rotate(15deg);
+        }
+    }
+    @keyframes donghua2{
+        form{
+           transform: rotate(0deg); 
+        }
+        to{
+             transform: rotate(-15deg);
+        }
+    }
+    
+}
+.er{
+     .one{
+        animation: weiyi 1s linear;
+    }
+     .two{
+        animation: weiyi2 1s linear;
+    }
+        @keyframes weiyi{
+        form{
+           transform: translateX(0px); 
+        }
+        to{
+             transform: translateX(40px) translateY(-40px);
+        }
+    }
+    @keyframes weiyi2{
+        form{
+           transform: translateX(0px); 
+        }
+        to{
+            transform: translateX(20px) translateY(-20px);
+        }
+    }
+}

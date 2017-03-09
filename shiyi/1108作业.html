@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+		ul{
+			margin: 0 auto;
+			height: 50px;
+			width: 600px;
+			padding-left: 25px;
+			background-color:black ;
+		}
+		ul li{
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			
+		}
+		a{
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		span{
+			margin: 0 25px;
+			color: white;
+		}
+		.one{
+			margin: 0 auto;
+			width: 600px;
+		}
+		.one ol{
+			width: 120px;
+			/*background-color: red;*/
+			float: left;
+		}
+		.one ol li{
+			text-align: center;
+			line-height: 50px;
+		}
+		.one ol li a{
+			color: #006400;
+		}
+	</style>
+</head>
+<body>
+	<div class="yi">
+		<ul>
+		<li><a href="">网站首页</a><span>|</span></li>
+		<li><a href="">关于我们</a><span>|</span></li>
+		<li><a href="">资质鉴定</a><span>|</span></li>
+		<li><a href="">政府扶持</a><span>|</span></li>
+		<li><a href="">知识产权</a></li>
+	</ul>
+	<div class="one">
+		<ol>
+			<li><a href="">1</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">1</a></li>
+		</ol>
+		<ol>
+			<li><a href="">2</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">2</a></li>
+		</ol>
+		<ol>
+			<li><a href="">3</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">3</a></li>
+		</ol>
+		<ol>
+			<li><a href="">4</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">4</a></li>
+		</ol>
+		<ol>
+			<li><a href="">5</a></li>
+			<li><a href="">5</a></li>
+			<li><a href="">5</a></li>
+			<li><a href="">5</a></li>
+		</ol>
+	</div>
+	</div>
+	
+</body>
+<script>
+//      $(function () {
+//          $(".one ol").hide();
+//          $(".yi ul li a").hover(function () {
+//              $(".one ol").show();
+//          }, function () {
+//              $(".one ol").hide();
+//          })
+//
+//          $(".one ol").hover(function () {
+//              $(".one ol").show();
+//          }, function () {
+//              $(".one ol").hide();
+//          })
+//      }); 
+        
+
+//$(document).ready(function() {
+//$('.yi ul li a').hover(function(){
+//$(this).show();
+//}, function(){
+//$('.one ol').hide();
+//});
+//});
+		//ready：当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。
+        $(document).ready(function() { 
+        	$('.yi ul li a').hover(function(){ $('.one ol').show(); 
+        	}, 
+        	function(){ 
+        		$('.one ol').hide(); 
+        	}); 
+        }); 
+//      $('ol').hover(function(){
+//      	$(this).css('overflow','visible');
+//      }).mouseleave(function(){
+//      	$(this).css('overflow','hidden')
+//      })
+</script>
+</html>

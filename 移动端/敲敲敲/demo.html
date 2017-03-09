@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding: 0;
+			}
+			body{
+				text-align: center;
+			}
+			tr{
+				height: 30px;
+			}
+			tr td{
+				width: 100px;
+			}
+			#status{
+				border: 1px solid #ccc;
+				margin: 20px auto;
+				padding: 30px;
+			}
+			.update{
+				margin-top: 50px;
+			}
+			p{
+				margin-bottom: 20px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="status" name="status"></table>
+		<button id="add">增加</button>
+		<button id="add">删除</button>
+		<button id="add">修改</button>
+		<button id="add">查询</button>
+		<div class="info" id="info">
+			ID: <input type="text" id="key"/>
+			LOG: <input type="text" id="txt"/>
+		</div>
+		<div class="update">
+			<input type="text" id="up_key"/>
+			<input type="text" id="up_txt"/>
+			<button id="btn">保存</button>
+		</div>
+	</body>
+</html>

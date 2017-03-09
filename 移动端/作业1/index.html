@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/作业1.css"/>
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="w_all">
+			<div class="w_one">				
+		<header>
+			<div><img src="img/images/a_03.jpg"/></div>
+			<h1>公司名称</h1>
+			<div><img src="img/images/a_05.jpg"/></div>
+		</header>
+		<section style="background: #ccc;">
+			<div style="background: white;">							
+			<div class="banner">
+				<img src="img/images/a_10.jpg"/>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/images/a_14.jpg"/></dt>
+					<dd>关于我们</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_16.jpg"/></dt>
+					<dd>广告位</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_18.jpg"/></dt>
+					<dd>新闻资讯</dd>
+				</dl>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/images/a_23.jpg"/></dt>
+					<dd>企业资质</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_24.jpg"/></dt>
+					<dd>案例展</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_25.jpg"/></dt>
+					<dd>联系方式</dd>
+				</dl>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/images/a_14.jpg"/></dt>
+					<dd>关于我们</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_16.jpg"/></dt>
+					<dd>广告位</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_18.jpg"/></dt>
+					<dd>新闻资讯</dd>
+				</dl>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/images/a_14.jpg"/></dt>
+					<dd>关于我们</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_16.jpg"/></dt>
+					<dd>广告位</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/images/a_18.jpg"/></dt>
+					<dd>新闻资讯</dd>
+				</dl>
+			</div>
+			</div>
+		</section>
+				</div>
+				<div class="w_two">2</div>
+				<div class="w_three">3</div>
+				<div class="w_four">4</div>
+				<div class="w_five">5</div>
+		</div>
+		<footer>
+			<dl class="first">
+				<dt><img src="img/images/a_30.jpg"/></dt>
+				<dd>首页</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/images/a_32.jpg"/></dt>
+				<dd>关于</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/images/a_34.jpg"/></dt>
+				<dd>资讯</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/images/a_36.jpg"/></dt>
+				<dd>用户</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/images/a_38.jpg"/></dt>
+				<dd>更多</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/iscroll.js"></script>
+	<script>
+		var myscroll = new IScroll(".w_one section",{
+			scrollbars:true,
+			disableMouse:true,
+			disablePointer:true,
+			scrollbars:'custom'
+		});
+		var btn = $('footer>dl');
+		btn.on('click',function(){
+			var _index=$(this).index();
+			$(this).addClass('first').siblings().removeClass('first');
+			$('.w_all>div').hide().eq(_index).show();
+		});
+	</script>
+</html>

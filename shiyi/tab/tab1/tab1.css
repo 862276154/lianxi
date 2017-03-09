@@ -1,0 +1,38 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+body{
+	margin: 50px;
+}
+.hide{
+	display: none;
+}
+.tabTitle ul{
+	overflow: hidden;
+	_height:1px; /*IE6中清除浮动的方法*/
+}
+.tabTitle ul li{
+	float: left;
+	border: 1px #ccc solid;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+	margin-right: 5px;
+	cursor: pointer;  /*光标编程手型*/
+}
+/*选中*/
+.current{
+	background: #abcdef;
+	color: #fff;
+}
+
+.tabContent div{
+	border: 1px #f06 solid;
+	width: 200px;
+	height: 100px;
+	padding: 15px;
+}

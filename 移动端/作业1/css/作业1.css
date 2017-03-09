@@ -1,0 +1,102 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 0.625;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrap .w_all {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrap .w_all .w_one {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrap .w_all .w_one header {
+  width: 100%;
+  height: 3rem;
+  background: #ff7417;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrap .w_all .w_one header > div {
+  width: 3rem;
+  height: 3rem;
+  background: none;
+  text-align: center;
+  line-height: 3rem;
+}
+.wrap .w_all .w_one header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  line-height: 3rem;
+  color: white;
+  font-weight: bold;
+}
+.wrap .w_all .w_one section {
+  -webkit-box-flex: 1;
+  overflow: auto;
+}
+.wrap .w_all .w_one section::-webkit-scrollbar {
+  width: 0;
+}
+.wrap .w_all .w_one section .banner img {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrap .w_all .w_one section .main {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding: 1rem 1.5rem 0;
+}
+.wrap .w_all .w_one section .main dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+  width: 0;
+  color: #fbb68a;
+}
+.wrap footer {
+  width: 100%;
+  height: 3.8rem;
+  background: #ff7417;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-top: 0.2rem;
+}
+.wrap footer dl {
+  width: 0;
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: white;
+}
+.wrap footer .first {
+  color: #FBB68A;
+}

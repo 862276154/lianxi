@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.1.1.js"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			display: block;
+			margin: 50px auto;
+			background: #EEEEEE;
+		}
+	</style>
+	<body>
+		<canvas id="ca" width="600" height="600"></canvas>
+	</body>
+	<script>
+	$(function(){
+		var data;
+		$.ajax({		
+			type:"get",
+			url:"js/zhu.json",
+			async:false,
+			data:{},
+			dataType:"json",
+			success:function(msg){
+				data = msg;
+			}
+		});
+		console.log(data);	
+		var oCa = document.getElementById('ca');
+		var can = oCa.getContext('2d');
+		can.translate(30,30);
+		can.moveTo(0,0);
+		can.lineTo(0,350);
+		can.lineTo(500,350);
+		for(var i=0;i<7;i++){
+			can.moveTo(0,50*i);
+			can.lineTo(8,50*i);
+			if(i>0){
+				//四个参数：1，文本内容；2，x轴；3 y轴，4 最大宽度（不写就是自己本身宽度）
+				can.fillText(350-50*i,-25,50*i+4);
+			}
+		}
+		can.lineWidth=1;
+		can.strokeStyle='#000';
+		can.stroke();
+		var str=50;
+		for(var i=0;i<data.length;i++){
+			can.beginPath();
+			can.fillStyle='blue';
+			can.fillRect(str,350-data[i].num2,20,data[i].num2);
+			can.fill(); 
+			can.closePath();
+			can.beginPath();
+			can.fillStyle='pink';
+			can.fillRect(str,350-data[i].num1,18,data[i].num1);
+			can.fillStyle='#000';
+			can.fillText(data[i].num1+'/'+data[i].num2,str-6,350-data[i].num2-5);
+			can.fillText(data[i].month,str,370);
+			can.fill();
+			can.closePath();
+			str+=70;
+		}
+		});
+	</script>
+</html>

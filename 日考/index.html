@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>ajax</title>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+	<select name="" id="box"></select>
+	<select name="" id="box2"></select>
+	<select name="" id="box3"></select>
+</body>
+<script>
+	$(function(){
+		function getAjax(){
+			$.ajax({
+				type:"get",
+				url:"a.txt",
+				async:true,
+				data:{},
+				dataType:'json',
+				success:function(data){
+					province = data.p;
+					city = data.a;
+					$.each(province, function(i,val) {
+						var str = "<option>"+val+"</option>";
+						$('#box').append(str);
+					});
+				}
+			});
+		}
+		getAjax();
+		$('#box').change(function(){
+			$('#box2').html("<option value='0'>请选择市</option>");
+			$('.box3').html("<option value='0'>请选择区/县</option>");
+			var $val = $('.box').val();
+			$.each(city[$val], function(j,value) {
+				$('.box2').append("<option>"+value+"</option>");
+			});
+		});
+		$('#box2').change(function(){
+			$('#box3').html("<option value='0'>请选择区/县</option>");
+			var $_val = $('.box').val()+"-"+$('#box2').val();
+			$.each(county[$_val], function(j,_value) {
+				$('.box3').append("<option>"+_value+"</option>");
+			});
+		})
+	})
+</script>
+</html>

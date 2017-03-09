@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<style>
+    #box{
+        width: 200px;
+        height: 200px;
+        cursor: move;
+        position: absolute;
+        background: red;
+        border: 1px solid black;
+    }
+</style>
+<body>
+<!--<a href="#">按钮</a>-->
+<div id="box">拖走我</div>
+
+<script>
+//    var ab = document.getElementsByTagName('a')[0];
+//    ab.onclick=function () {
+//      ab.innerHTML='ok';
+//      return false;//阻止a链接的跳转
+//    };
+//    document.oncontextmenu= function(e){
+//        var e = e || window.event;
+//        if(e.button == "2"){ //判断是否是右键
+//                             //……你的代码……
+//            alert("右击事件");
+//            return false;
+//        }
+//        return true;
+//    }
+    $(function () {
+        var ix,iy;
+        var dragging = false;
+        //获取div的坐标；获取鼠标当前位置；识别出是否处于拖拽状态；
+        $('#box').mousedown(function (e) {
+            dragging = true;
+            ix = e.pageX -this.offsetLeft;//获取左偏移量；
+            iy = e.pageY - this.offsetTop;//获取上部偏移量；
+            this.setCapture&&this.setCapture();//捕获鼠标
+            $(document).mousemove(function (e) {
+                if(dragging){
+                    var ox = e.pageX - ix;//获取到最终的box的x坐标；
+                    var oy = e.pageY - iy;//获取到最终的box的y坐标；
+                    $('#box').css({left:ox+'px',top:oy+'px'});
+                    return false;
+                }
+            });
+            $(document).mouseup(function (e) {
+                dragging = false;
+               $('#box').releaseCapture();
+//                $(document).off();//可以用这个
+               e.cancelBubble = true;
+//                //stopImmediatePropagation和stopPropagation都能阻挡掉事件流中事件的冒泡
+//                return false;
+            });
+            return false;//阻止默认事件
+        });
+
+
+
+
+
+    })
+</script>
+
+</body>
+</html>

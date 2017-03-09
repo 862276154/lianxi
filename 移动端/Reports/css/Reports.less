@@ -1,0 +1,106 @@
+@import url("reset.css");
+.whb(@w,@h,@b){
+    width: @w;
+    height: @h;
+    background: @b;
+}
+.f(@f){
+    float: @f;
+}
+.a{
+    position: absolute;
+}
+.r{
+    position: relative;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient: @ver;
+}
+html,body{
+    .whb(100%,100%,none);
+}
+html{
+    font-size: 0.625;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    .whb(100%,100%,none);
+    .box(vertical);
+    header{
+        .whb(100%,4.8rem,#fe4f54);
+        .box(horizontal);
+        line-height: 4.8rem;
+        padding: 0 2rem;
+        box-sizing: border-box;
+        color: white;
+        border-bottom: 2px solid #eed4cd;
+        img{
+            vertical-align: middle;
+        }
+        h1{
+            -webkit-box-flex: 1;
+            padding-left: 2.6rem;
+            font-size: 1.4rem;
+        }
+    }
+    section{
+        overflow-y: auto;
+        &::-webkit-scrollbar{width: 0;}
+        .whb(100%,auto,none);
+        -webkit-box-flex: 1;
+        h2{
+            color: #7f7f7f;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-top: 2.4rem;
+            margin-left: 2rem;
+        }
+        .ss{
+            .box(horizontal);
+            -webkit-box-flex: 1;
+            padding-right: 2rem;
+            #can{
+                margin: 2.4rem 0 0 2rem;           
+            }
+            h4{
+                -webkit-box-flex: 1;
+            }
+            &>div{
+                padding-right: 0.5rem;
+                padding-top: 3rem;
+                img{
+                    margin-right: 1rem;
+                }
+                p{
+                    margin-bottom: 0.8rem;
+                }
+            }
+        }
+        .s_second{
+            .box(horizontal);
+            -webkit-box-flex: 1;
+            padding-right: 4.5rem;
+            #canv{
+                margin: 1rem 0 0 2rem; 
+            }
+            h4{
+                -webkit-box-flex: 1;
+            }
+                &>div{
+                padding-right: 0.5rem;
+                padding-top: 3rem;
+                img{
+                    margin-right: 1rem;
+                }
+                p{
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}

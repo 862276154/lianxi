@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+	<style>
+		#box{
+			width: 80px;
+			height: 60px;
+			background-color:pink ;
+			border: 1px #006400 solid;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		$("#box").click(function(){
+		  $(this).animate({ 
+		  	left:"300px",
+		  	top:"300px",
+		    width: "90%",
+		    height: "100%", 
+		    //fontSize: "10em", 
+		    //borderWidth: 10
+		  }, 1000 );
+		  $(this).animate({ 
+		  	left:"300px",
+		  	top:"100px",
+		    width: "30%",
+		    height: "50%", 
+		    //fontSize: "10em", 
+		    //borderWidth: 10
+		  }, 1000 );
+		  $(this).animate({ 
+		  	left:"100px",
+		  	//top:"100px",
+		    width: "30%",
+		    height: "30%", 
+		    opacity:"0.5"
+		    //fontSize: "10em", 
+		    //borderWidth: 10
+		    
+		  }, 1000 ).fadeOut('slow');
+		 
+
+
+		});
+	</script>
+	<!--<button id="go"> Run</button>
+	<div id="block">Hello!</div>
+	<button id="left">«</button> <button id="right">»</button>
+	<div class="block"></div>-->
+	
+	<!--<script>
+		// 在一个动画中同时应用三种类型的效果
+			$("#go").click(function(){
+			  $("#block").animate({ 
+			    width: "90%",
+			    height: "100%", 
+			    fontSize: "10em", 
+			    borderWidth: 10
+			  }, 1000 );
+			});
+			$("#right").click(function(){
+			  $(".block").animate({left: '+50px'}, "slow");
+			});
+			
+			$("#left").click(function(){
+			  $(".block").animate({left: '-50px'}, "slow");
+			});
+			$("p").animate({
+  			 height: 'toggle', opacity: 'toggle'
+ 			}, "slow");
+ 			$("p").animate({
+   			left: 50, opacity: 'show'
+ 			}, 500);
+ 			$("p").animate({
+   			opacity: 'show'
+ 			}, "slow", "easein");
+	</script>-->
+</body>
+</html>

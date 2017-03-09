@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="jquery-3.1.1.js"></script>
+	<style>
+    table{
+        border: 0;border-collapse: collapse;
+    }
+    td{
+        font:normal 12px/17px Arial;padding: 2px;width: 100px;
+    }
+    th{
+        font:normal 12px/17px Arial;text-align: left;
+        padding: 4px;border-bottom: 1px solid #333;
+    }
+    .even{
+        background: #fff38f;
+    }
+    .odd{
+        background: #66CD00;
+    }
+    .selected{
+        background: #ff6500;color: #fff;
+    }
+    .parent{
+        background: #fff38f;cursor: pointer;
+        text-align: center;
+    }
+
+</style>
+<table>
+    <thead>
+    <tr>
+        <th>选择</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>户口所在地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="row_01">
+        <td colspan="4">前端开发组</td>
+
+    </tr>
+    <tr class="childrow_01">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>李四</td> <td>男</td> <td>北京八宝山</td>
+    </tr>
+    <tr class="childrow_01">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>王五</td> <td>女</td> <td>哈萨克斯坦</td>
+    </tr>
+    <tr class="parent" id="row_02">
+        <td colspan="4">后台开发组</td>
+
+    </tr>
+    <tr class="childrow_02">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>阿凡提</td> <td>男</td> <td>新疆乌鲁木齐</td>
+    </tr>
+    <tr class="childrow_02">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>盖伦</td> <td>女</td> <td>德玛西亚</td>
+    </tr>
+    <tr class="parent" id="row_03">
+        <td colspan="4">产品组</td>
+
+    </tr>
+    <tr class="childrow_03">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>ManMan</td> <td>女</td> <td>迪拜</td>
+    </tr>
+    <tr class="childrow_03">
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>TFBOy</td> <td>男</td> <td>火星</td>
+    </tr>
+    </tbody>
+
+</table>
+</head>
+<body>
+	<script>
+		$(function(){
+			//toggleClass：如果存在（不存在）就删除（添加）一个类
+			$('tr.parent').click(function(){
+				$(this).toggleClass('selected').siblings('.child'+this.id).toggle()
+			}).click();
+		})
+	</script>
+</body>
+</html>

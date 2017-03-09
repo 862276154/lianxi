@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery鼠标悬浮图片放大特效</title>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+var imgWid = 0 ;
+var imgHei = 0 ; //变量初始化
+var big = 1.2;//放大倍数
+$(".banimg li").hover(function(){
+	$(this).find("img").stop(true,true);
+	var imgWid2 = 0;var imgHei2 = 0;//局部变量
+	imgWid = $(this).find("img").width();
+	imgHei = $(this).find("img").height();
+	imgWid2 = imgWid * big;
+	imgHei2 = imgHei * big;
+	$(this).find("img").css({"z-index":2});
+	$(this).find("img").animate({"width":imgWid2,"height":imgHei2,"margin-left":-imgWid2/2,"margin-top":-imgHei2/2});
+},function(){$(this).find("img").stop().animate({"width":imgWid,"height":imgHei,"margin-left":-imgWid/2,"margin-top":-imgHei/2,"z-index":1});});
+})
+</script>
+<style type="text/css">
+*{margin: 0; padding: 0; list-style: none;}
+.banimg{width: 400px;height: 100px; margin: 20px auto;}
+.banimg li{ width: 100px; height: 100px; float: left; position: relative;}
+.banimg li img{ width: 100px; height: 100px; position: absolute; left: 50%;top: 50%;margin: -100px 0 0 -100px;z-index: 1;}
+</style>
+</head>
+<body>
+<ul class="banimg">
+  <li><a href="#"><img src="images/apple_1.jpg" /></a></li>
+  <li><a href="#"><img src="images/apple_2.jpg" /></a></li>
+  <li><a href="#"><img src="images/apple_3.jpg" /></a></li>
+  <li><a href="#"><img src="images/apple_4.jpg" /></a></li>
+</ul>
+
+</body>
+</html>

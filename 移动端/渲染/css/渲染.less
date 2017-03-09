@@ -1,0 +1,160 @@
+@import url("reset.css");
+.whb(@w,@h,@b){
+    width: @w;
+    height: @h;
+    background: @b;
+}
+.f(@f){
+    float: @f;
+}
+.a{
+    position: absolute;
+}
+.r{
+    position: relative;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient: @ver;
+}
+html,body{
+    .whb(100%,100%,none);
+}
+html{
+    font-size: 0.625;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    .whb(100%,100%,none);
+    .box(vertical);
+    header{
+        .whb(100%,3.6rem,#191b20);
+        line-height: 3.6rem;
+        border-bottom: 2px solid #8a8a8a;
+        color: white;
+        .box(horizontal);
+        padding: 0 0.8rem;
+        box-sizing: border-box;
+        img{
+            vertical-align: middle;
+        }
+        h1{
+            -webkit-box-flex: 1;
+            text-align: center;
+        }
+    }
+    section{
+        -webkit-box-flex: 1;
+        overflow-y: auto;
+        &::-webkit-scrollbar{width: 0;}
+        .nav{
+            .box(horizontal);
+            .whb(100%,5rem,none);
+            padding-top: 1rem;
+            box-sizing: border-box;
+            border-bottom: 4px solid #eeeced;
+            &>div{
+                margin: 0 1.2rem;
+            }
+            .fan{
+                margin-top: 0.5rem;
+            }
+            .inp{
+                -webkit-box-flex: 1;
+                .r;
+            &>input{
+                .whb(100%,2.5rem,#eeeced);
+                outline: none;
+                border: none;
+                border-radius: 1rem;
+                padding-left: 4.8rem;
+                box-sizing: border-box;
+            }
+            span{
+                .a;
+                top: 0.5rem;
+                left: 0.8rem;
+            }
+            }
+        }
+        .banner{
+            .box(horizontal);
+            .whb(100%,3.5rem,none);
+            line-height: 3.5rem;
+            border-bottom: 1px solid #f7f7f7;
+            text-align: center;
+            &>div{
+                -webkit-box-flex: 1;
+                background: url(../img/qqqqqq_03.jpg) no-repeat left center;
+                //代码实现尖角号
+                span{
+                     .whb(0.6rem,0.6rem,none); 
+                            display:inline-block;
+                            border: 2px solid #5f5f5f;
+                            transform: rotateZ(45deg); 
+                            border-top:none ;
+                            border-left:none;
+                            margin-left: 0.7rem;
+                }
+            }
+            div:last-child{
+                background: none;
+            }
+        }
+        .main{
+            padding: 0 0.9rem;
+            box-sizing: border-box;
+            margin-top: 1.1rem;
+            color: #d3dbe0;
+            .one{
+                .whb(6rem,6rem,none);
+                margin-right: 0.8rem;
+            }
+            .two{
+                margin-top: 1.5rem;
+            }
+            .three{
+                margin: 0 1.4rem 0 0.3rem;
+            }
+            p{
+                margin-top: 0.4rem;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                overflow: hidden;//自动隐藏文字
+                white-space: nowrap;//强制不换行
+                text-overflow: ellipsis;//文字隐藏后添加省略号
+            }
+            .m_o{
+                border-bottom: 1px solid #f3f3f3;  
+            dl{
+                dt{
+                    .f(left);   
+                }
+            }
+                    .jiang{
+                        color: #262527;
+                        font-weight: bold;
+                    }
+            }
+        }
+    }
+    footer{
+        .whb(100%,4.4rem,none);
+        border-top: 2px solid #e6e6e6;
+        padding-top: 0.7rem;
+        box-sizing: border-box;
+        .box(horizontal);
+        color: #a0a1a0;
+        dl{
+            -webkit-box-flex: 1;
+            text-align: center;
+        }
+        .bian{
+            color: #fdb6ba;
+        }
+    }
+}

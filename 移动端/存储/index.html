@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#wrapper{
+				margin: 30px;
+				width: 400px;
+				min-height: 200px;
+				border: 2px solid purple;
+			}
+			p{
+				line-height: 30px;
+			}
+			span{
+				color: red;
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper"></div>
+		<input type="text" id="key"/>
+		<input type="text" id="val"/>
+		<select id="sele">
+			<option value="local">local</option>
+			<option value="session">session</option>
+		</select>
+		<button id="save">保存数据</button>
+		<button id="read">读取数据</button>
+	</body>
+	<script>
+			var wrapper=document.getElementById('wrapper');
+			var html='',html2='';
+		save.onclick=function(){
+			var key=document.getElementById('key').value;
+			var val=document.getElementById('val').value;
+			var sele=document.getElementById('sele').value;
+			var save=document.getElementById('save').value;
+			var read=document.getElementById('read').value;
+			//console.log(sele);
+			if(sele==='local'){
+				window.localStorage=localStorage.setItem(key,val);
+			}else{
+				window.sessionStorage=sessionStorage.setItem(key,val)
+			}
+		}
+			read.onclick=function(){
+				localLength=localStorage.length;
+				sessionLength=sessionStorage.length;
+				var sele=document.getElementById('sele').value;
+				if(sele==='local'){
+					for(var i=0;i<localLength;i++){
+						html+='<p><span>'+localStorage.key(i)+'</span>'+localStorage.getItem(localStorage.key(i))+'</p>';
+					}
+					wrapper.innerHTML=html;
+				}else{
+					for(var i=0;i<sessionLength;i++){
+						html+='<p><span>'+sessionStorage.key(i)+'</span>'+sessionStorage.getItem(sessionStorage.key(i))+'</p>';
+					}
+					wrapper.innerHTML=html;
+				}
+			}
+	</script>
+</html>

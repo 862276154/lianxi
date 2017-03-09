@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;			
+		}
+		table{
+			width: 500px;
+			height: 300px;
+			text-align: center;
+			/*margin: 40px auto;*/
+		}
+		th{
+			color: red;
+		}
+		.even{
+			background: #66CD00;
+		}
+		.odd{
+			background: #800080;
+		}
+	</style>
+	<body>
+		<table border="" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>选择</th>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>职业</th>
+				<th>年龄</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>1</td>
+				<td>老夫</td>
+				<td>男</td>
+				<td>码奴</td>
+				<td>88</td>
+			</tr>
+		</table>
+		<button id="checkedAll">全选</button>
+		<button id="nochecked">全不选</button>
+		<button id="unchecked">反选</button>
+		<!--<button id="checked">单选</button>-->
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$('#checkedAll').click(function(){
+				$(':checkbox').each(function(){
+					this.checked = true;
+				})	;			
+			});
+			$('#nochecked').click(function(){
+				$(':checkbox').each(function(){
+					this.checked = false;
+				});
+			});
+			$('#unchecked').click(function(){
+				$(':checkbox').each(function(){
+					if(this.checked == false){
+					this.checked = true;
+				}else{
+					this.checked = false;
+				}
+				})
+				
+			});
+		});
+	</script>
+</html>

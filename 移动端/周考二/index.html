@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/周考二.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css"/> 		
+    </script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="all_w">
+			<div class="w_one">				
+		<header>
+			<!--<div><dl>
+				<dt><img src="img/as_03.jpg"/></dt>
+				<dd>扫一扫</dd>
+			</dl></div>-->
+			<div><img src="img/tao_03.jpg"/></div>
+			<input type="text" placeholder="新品女鞋低价抢"/>
+			<img src="img/tao_08.jpg" class="h_one"/><img src="img/tao_10.jpg" class="h_two"/>
+			<div><img src="img/tao_05.jpg"/></div>
+			<!--<div><dl>
+				<dt><img src="img/as_05.jpg"/></dt>
+				<dd>消息</dd>
+			</dl></div>-->
+		</header>
+		<section>
+			<div>
+			<div class="banner">
+				 <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="img/tao_16.jpg"/></div>
+			    		<div class="swiper-slide"><img src="img/tao_16.jpg"/></div>
+			    		<div class="swiper-slide"><img src="img/tao_16.jpg"/></div>
+			    		<div class="swiper-slide"><img src="img/tao_16.jpg"/></div>
+			    		<div class="swiper-slide"><img src="img/tao_16.jpg"/></div>
+			        </div>
+			      </div>  
+				<!--<img src="img/tao_16.jpg"/>-->
+			</div>
+			<div class="banner2">
+				<img src="img/tao_17.jpg"/>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/tao_20.jpg"/></dt>
+					<dd>天猫</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_22.jpg"/></dt>
+					<dd>聚划算</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_24.jpg"/></dt>
+					<dd>天猫国际</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_26.jpg"/></dt>
+					<dd>外卖</dd>
+				</dl><dl>
+					<dt><img src="img/tao_28.jpg"/></dt>
+					<dd>天猫超市</dd>
+				</dl>
+			</div>
+					<div class="main">
+				<dl>
+					<dt><img src="img/tao_35.jpg"/></dt>
+					<dd>充值中心</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_36.jpg"/></dt>
+					<dd>飞猪旅行</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_37.jpg"/></dt>
+					<dd>领金币</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/tao_38.jpg"/></dt>
+					<dd>到家</dd>
+				</dl><dl>
+					<dt><img src="img/tao_39.jpg"/></dt>
+					<dd>分类</dd>
+				</dl>
+			</div>
+			<div class="tao">
+				<img src="img/tao_46.jpg"/>
+				<ul>
+					<li><span>热  议</span>如果用手去拔劳斯莱斯的车标，结果会......</li>
+					<li class="t_one"><span>1212</span>软装那些事，双12创意装饰画大赏</li>
+				</ul>
+			</div>
+			<div class="s_bottom">
+				<div class="s_b_one">
+					<div><img src="img/tao_50.jpg"/></div>
+					<div class="ww"><img src="img/tao_52.jpg"/></div>
+					<div><img src="img/tao_54.jpg"/></div>
+					<div><img src="img/tao_56.jpg"/></div>
+				</div>
+			</div>
+			</div>
+		</section>
+			</div>
+			<div class="w_two">2</div>
+			<div class="w_three">3</div>
+			<div class="w_four">4</div>
+			<div class="w_five">5</div>
+		</div>
+		<footer>
+			<dl class="hong">
+				<dt><img src="img/tao_63.jpg"/></dt>
+				<dd>首页</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/tao_65.jpg"/></dt>
+				<dd>微淘</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/tao_67.jpg"/></dt>
+				<dd>问大家</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/tao_69.jpg"/></dt>
+				<dd>购物车</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/tao_71.jpg"/></dt>
+				<dd>我的淘宝</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/swiper-3.4.1.jquery.min.js"></script>
+<script>
+	var myscroll=new IScroll("section",{
+					scrollbars:true,
+					disableMouse:true,
+					disablePointer:true,
+					scrollbars:'custom'
+	});
+	  var swiper = new Swiper('.banner .swiper-container', {
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay:1000,
+        loop:true,
+        autoplayDisableOnInteraction: false
+   });	
+   var btn=$('footer>dl');
+   btn.on('click',function(){
+   		var _index=$(this).index();
+   		$(this).addClass('hong').siblings().removeClass('hong');
+   		$('.all_w>div').hide().eq(_index).show();
+   });
+</script>
+</html>

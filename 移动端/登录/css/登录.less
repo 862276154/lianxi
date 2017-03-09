@@ -1,0 +1,93 @@
+@import url('reset.css');
+.whb(@w,@h,@bg){
+    width: @w;
+    height: @h;
+    background: @bg;
+}
+.f(@f){
+    float: @f;
+}
+.a{
+    position: absolute;
+}
+.r{
+    position: relative;
+}
+.box(@ver){
+    display: -webkit-box;
+    -webkit-box-orient: @ver;
+}
+html,body,.wrapper{
+    .whb(100%,100%,none);
+}
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}//ff614c/f85453/bcbcbc/半框eaeaea
+.wrapper{
+    .box(vertical);
+    font-size: 1.5rem;
+    header{
+        .whb(100%,4rem,#ff614c);
+        p{
+            text-align: center;
+            line-height: 4rem;
+            color: white;
+        }
+    }
+    section{
+        padding: 0 1rem;
+        box-sizing: border-box;
+        .r;
+        .banner{
+            -webkit-box-flex: 1;
+            text-align: center;
+            margin: 3.6rem 0;
+        }
+        input{
+            display: block;
+            -webkit-box-flex: 1;
+            .whb(100%,3.5rem,none);
+            outline: none;
+            border: none;
+            border: 1px solid #eaeaea;
+           padding-left: 4rem;
+           margin-bottom: 2.5rem;
+           box-sizing: border-box;
+        }
+        .one{
+            .a;
+            top: 16.3rem;
+            left: 2rem;
+        }
+         .two{
+            .a;
+            top: 22rem;
+            left: 2rem;
+        }
+        button{
+            .whb(100%,3.5rem,#f85453);
+            border: none;
+            outline: none;
+            border-radius: 0.3rem;
+            color: white;
+        }
+        .zhuce{
+            .box(horizontal);
+            margin-top: 1.6rem;
+            &>div{
+                -webkit-box-flex: 1;
+                text-align: center;
+                color: #bcbcbc;
+                font-size: 1.2rem;
+            }
+            div:nth-child(1){
+                border-right: 1px solid #bcbcbc;
+            }
+        }
+    }
+}

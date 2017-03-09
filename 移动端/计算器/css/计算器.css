@@ -1,0 +1,17 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.box {
+  width: 320px;
+  height: 453px;
+  background: #d9ffff;
+}

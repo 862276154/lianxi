@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/商店.css"/>
+    <title>商店</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div><img src="img/xuanran_03.jpg"/>返回</div>
+			<h1>商店</h1>
+			<div><img src="img/xuanran_05.jpg"/></div>
+		</header>
+		<div class="all_s">
+			<div class="s_one">1</div>	
+			<div class="s_two">
+		<section>
+			<div>
+			<div class="nav">
+				<div>返回</div>
+				<div class="inp">
+					<input type="text" placeholder="搜索：商品/品牌"/>
+					<span>商店</span>
+				</div>
+			</div>
+			<div class="banner">
+				<!--<div>全部商区<span></span></div>
+				<div>全部类型<span></span></div>
+				<div>智能排序<span></span></div>-->
+			</div>
+			<div class="main">
+				<!--<dl>
+					<dt><img src="img/xuanran_10.jpg"/></dt>
+					<dd>
+						<ul>
+							<li>江户和装工房·雅</li>
+							<li>台东区</li>
+							<li>
+								<span><img src="img/xuanran_13.jpg"/>741人收藏</span>
+								<span><img src="img/xuanran_15.jpg"/>2113.9km</span>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<p>海洋与星空 本来不相同 朝夕在相处 在互相感动 在互相包容 我们再想象 爱情的力量 比岁月坚强</p>-->
+			</div>
+			<!--<div class="main">
+				<dl>
+					<dt><img src="img/xuanran_10.jpg"/></dt>
+					<dd>
+						<ul>
+							<li>江户和装工房·雅</li>
+							<li>台东区</li>
+							<li>
+								<span><img src="img/xuanran_13.jpg"/>741人收藏</span>
+								<span><img src="img/xuanran_15.jpg"/>2113.9km</span>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<p>海洋与星空 本来不相同 朝夕在相处 在互相感动 在互相包容 我们再想象 爱情的力量 比岁月坚强</p>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/xuanran_10.jpg"/></dt>
+					<dd>
+						<ul>
+							<li>江户和装工房·雅</li>
+							<li>台东区</li>
+							<li>
+								<span><img src="img/xuanran_13.jpg"/>741人收藏</span>
+								<span><img src="img/xuanran_15.jpg"/>2113.9km</span>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<p>海洋与星空 本来不相同 朝夕在相处 在互相感动 在互相包容 我们再想象 爱情的力量 比岁月坚强</p>
+			</div>
+			<div class="main">
+				<dl>
+					<dt><img src="img/xuanran_10.jpg"/></dt>
+					<dd>
+						<ul>
+							<li>江户和装工房·雅</li>
+							<li>台东区</li>
+							<li>
+								<span><img src="img/xuanran_13.jpg"/>741人收藏</span>
+								<span><img src="img/xuanran_15.jpg"/>2113.9km</span>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<p>海洋与星空 本来不相同 朝夕在相处 在互相感动 在互相包容 我们再想象 爱情的力量 比岁月坚强</p>
+			</div>-->
+			</div>
+		</section>		   		
+		   		</div>
+		   		<div class="s_three">3</div>
+		   		<div class="s_four">4</div>
+		   		<div class="s_five">5</div>
+		</div>
+		<footer>
+			<dl>
+				<dt><img src="img/xuanran_25.jpg"/></dt>
+				<dd>热门</dd>
+			</dl>
+			<dl class="hong">
+				<dt><img src="img/xuanran_27.jpg"/></dt>
+				<dd>商店</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/xuanran_29.jpg"/></dt>
+				<dd>清单</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/xuanran_31.jpg"/></dt>
+				<dd>代买</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/xuanran_33.jpg"/></dt>
+				<dd>我的</dd>
+			</dl>
+		</footer>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+		var myscroll=new IScroll(" .s_two section",{
+					scrollbars:true,
+					disableMouse:true,
+					disablePointer:true,
+					scrollbars:'custom'
+			});
+	$.ajax({
+		type:"get",
+		url:"js/data.json",
+		async:true,
+		data:{},
+		dataType:'json',
+		success:function(data){
+			//console.log(data)
+			var str='',str2='';
+			$.each(data.datatit, function(i,v) {
+				str+='<div>'+v.titinfo+'<span></span></div>';
+				$('.banner').html(str);
+			});
+			$.each(data.datalist, function(_i,_v) {
+				str2+='<div class="main"><dl>'
+				+'<dt><img src="'+_v.images+'"/></dt>'
+				+'<dd><ul><li>'+_v.dataname+'</li>'
+				+'<li>'+_v.datacity+'</li>'
+				+'<li><span><img src="img/xuanran_13.jpg"/>'+_v.history+'</span>'
+				+'<span><img src="img/xuanran_15.jpg"/>'+_v.distance+'</span>'
+				+'</li></ul></dd></dl><p>'+_v.datainfo+'</p></div>';
+				$('.main').html(str2);
+			});
+		}
+	});	
+	$('.all_s>div').hide().eq(1).show();
+	var btn=$('footer>dl');
+	btn.on('click',function(){
+		var _index=$(this).index();
+		$(this).addClass('hong').siblings().removeClass('hong');
+		$('.all_s>div').hide().eq(_index).show();
+	});
+</script>
+</html>

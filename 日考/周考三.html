@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		th{
+			width: 100px;
+			height: 30px;
+			color: #fff;
+			background: red;
+		}
+		td{
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;			
+		}
+		.even{
+			background-color: #FFA500;
+		}
+		.odd{
+			background-color: #008000;
+		}
+		button{
+			width: 35px;
+			height: 30px;
+			margin-right: 5px;
+		}
+		.quan{
+			background: red;
+		}
+		.dan{
+			background: yellow;
+		}
+	</style>
+	<body>		
+		<table>
+			<thead>
+
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</body>
+	<script>
+		$(function(){
+			function getAjax(){
+				$.ajax({
+					type:"get",
+					url:"user (1).json",
+					async:true,
+					data:{},
+					dataType:'json',
+					success:function(data){
+						var str = "<tr><th>选择</th><th>姓名</th><th>性别</th><th>家庭住址</th></tr>";
+						$('thead').append(str);
+						$.each(data.sub, function(i,val) {
+							var str2 = "<tr><td><input type='checkbox' /></td><td>"+val.name+"</td><td>"+val.sex+"</td><td>"+val.address+"</td></tr>";
+							$('tbody').append(str2);
+						});
+						var str3 = "<button class='quanxuan'>全选</button><button class='fanxuan'>反选</button><button class='reset'>重置</button>";
+						$('body').append(str3);
+						$('tr:odd').addClass('odd');
+						$('tr:even').not(":first").addClass('even');
+						$('.quanxuan').click(function(){
+							$(':checkbox').each(function(){
+								this.checked = true;
+							})
+						});
+						$('.reset').click(function(){
+							$(':checkbox').each(function(){
+								this.checked = false;
+							})
+						});
+						$('.fanxuan').click(function(){
+							$(':checkbox').each(function(){
+								if(this.checked == true){
+									this.checked = false;
+								}else{
+									this.checked = true;
+								}
+							})
+						});
+						$(':checkbox').click(function(){
+							if($(this).parents('tr').hasClass('dan')){
+								$(this).parents('tr').removeClass('dan').prop('checked',false);																	
+							}else{
+								$(this).parents('tr').addClass('dan').prop('checked',true);
+							}
+						});
+					}
+				});
+			}
+			getAjax();
+		});
+	</script>
+</html>

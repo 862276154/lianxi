@@ -1,0 +1,138 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrapper .w_all {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper .w_all .w_one {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper .w_all .w_one header {
+  width: 100%;
+  height: 3.8rem;
+  background: none;
+  border-bottom: 2px solid #efefef;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  line-height: 3.8rem;
+}
+.wrapper .w_all .w_one header > div {
+  padding: 0 1.2rem;
+}
+.wrapper .w_all .w_one header > div img {
+  vertical-align: middle;
+}
+.wrapper .w_all .w_one header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: #425b6e;
+  font-weight: bold;
+}
+.wrapper .w_all .w_one section {
+  -webkit-box-flex: 1;
+  padding: 1rem;
+  overflow: auto;
+}
+.wrapper .w_all .w_one section::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper .w_all .w_one section .s_one {
+  border: 1px solid #f1f1f1;
+  padding: 0.8rem;
+  color: #a9a9a9;
+}
+.wrapper .w_all .w_one section .s_one .banner img {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper .w_all .w_one section .s_one .nav {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #c5c5c5;
+}
+.wrapper .w_all .w_one section .s_one .nav h2 {
+  -webkit-box-flex: 1;
+}
+.wrapper .w_all .w_one section .s_one .main {
+  margin: 1.5rem 0 5rem;
+}
+.wrapper .w_all .w_one section .s_one .sun {
+  text-align: right;
+}
+.wrapper .w_all .w_one section .s_two {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  width: 100%;
+  height: 4rem;
+  background: none;
+  line-height: 4rem;
+  margin-bottom: 1.5rem;
+  color: #c5c5c5;
+}
+.wrapper .w_all .w_one section .s_two img {
+  vertical-align: middle;
+  margin-right: 1rem;
+  padding-left: 1rem;
+}
+.wrapper .w_all .w_one section .s_two .one {
+  -webkit-box-flex: 3;
+}
+.wrapper .w_all .w_one section .s_two .two {
+  -webkit-box-flex: 2;
+  text-align: right;
+}
+.wrapper .w_all .w_one section .s_two .three {
+  -webkit-box-flex: 1;
+  text-align: right;
+}
+.wrapper footer {
+  width: 100%;
+  height: 4.6rem;
+  background: none;
+  border-top: 2px solid #eaeaea;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper footer dl {
+  -webkit-box-flex: 1;
+  width: 0;
+  text-align: center;
+  padding-top: 0.6rem;
+  color: #c4c4c4;
+}
+.wrapper footer .first {
+  color: #425B6E;
+}

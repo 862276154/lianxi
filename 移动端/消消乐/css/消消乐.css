@@ -1,0 +1,13 @@
+@import url("reset.css");
+.r {
+  position: relative;
+}
+.a {
+  position: absolute;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}

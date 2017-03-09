@@ -1,0 +1,166 @@
+@import url("reset.css");
+.a {
+  position: absolute;
+}
+.r {
+  position: relative;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+html {
+  font-size: 0.625;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  height: 100%;
+  background: none;
+  overflow: hidden;
+}
+.wrapper .all_w {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.wrapper .all_w .w_one {
+  width: 100%;
+  height: auto;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wrapper .all_w .w_one header {
+  width: 100%;
+  height: 4.4rem;
+  background: none;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  line-height: 4.4rem;
+  padding: 0 1.1rem;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e3e3e3;
+}
+.wrapper .all_w .w_one header img {
+  vertical-align: middle;
+}
+.wrapper .all_w .w_one header h1 {
+  -webkit-box-flex: 1;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.wrapper .all_w .w_one section {
+  -webkit-box-flex: 1;
+  overflow: auto;
+}
+.wrapper .all_w .w_one section::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper .all_w .w_one section .nav {
+  width: 100%;
+  height: auto;
+  background: #e5e5e5;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+.wrapper .all_w .w_one section .nav dl {
+  -webkit-box-flex: 1;
+  margin: 2rem 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px #bbbbbb;
+  padding: 0.5rem 0.7rem;
+  background: #fff;
+}
+.wrapper .all_w .w_one section .nav dl dt {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper .all_w .w_one section .nav dl dt img {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper .all_w .w_one section .nav dl dd {
+  font-size: 1.4rem;
+  text-align: center;
+}
+.wrapper .all_w .w_one section .banner {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper .all_w .w_one section .banner img {
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.wrapper .all_w .w_one section .main {
+  padding: 1.1rem 1rem;
+  position: relative;
+  border-bottom: 1px solid #f7f7f7;
+}
+.wrapper .all_w .w_one section .main dl dt {
+  float: left;
+  margin-right: 0.8rem;
+}
+.wrapper .all_w .w_one section .main dl dt img {
+  height: 3.3rem;
+}
+.wrapper .all_w .w_one section .main dl dd h2 {
+  font-size: 1.5rem;
+}
+.wrapper .all_w .w_one section .main dl dd p {
+  color: #b0afaf;
+}
+.wrapper .all_w .w_one section .main div {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+}
+.wrapper .all_w .w_one section .main div span {
+  margin: 0 0.2rem;
+  color: #b0afaf;
+}
+.wrapper .all_w .w_one section .main div .qq {
+  margin-right: 0.4rem;
+}
+.wrapper .all_w .w_one section .main .yue {
+  margin-top: 0.6rem;
+  color: #ababab;
+}
+.wrapper footer {
+  width: 100%;
+  height: 5rem;
+  background: #787878;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: white;
+}
+.wrapper footer dl {
+  -webkit-box-flex: 1;
+  text-align: center;
+  padding-top: 0.7rem;
+  box-sizing: border-box;
+  border-right: 2px solid #656565;
+}
+.wrapper footer .no {
+  border: none;
+}
+.wrapper footer .first {
+  background: #5d5d5d;
+}
+.wrapper footer .bian {
+  color: #5f9518;
+}
